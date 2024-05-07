@@ -2,6 +2,7 @@ window.onscroll = function() {myFunction()};
 var header = document.getElementById("navBar");
 var sticky = header.offsetTop;
 //hi
+// apple anion
 function myFunction() {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
