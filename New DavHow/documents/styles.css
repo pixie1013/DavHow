@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #ECECEC;
+}
+
+.information-area div{
+    display: inline-block;
+    margin: 10px;
+}
+
+/* Centered buttons */
+.information-area{
+    justify-content: center;
+    text-align: center;
+}
+
+/* Colored buttons */
+.information-area div div{
+    background: linear-gradient(to top, #003676, #0E71E4);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 50%;
+    padding: 15px;
+    width: 39px;
+    position: relative;
+}
+
+.information-area div span {
+    display: block;
+    margin-top: -5px; 
+    text-align: center;
+}
+
+/* Button area background */
+.button-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 70px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+/*SLIDER*/
+.slider{
+    position: absolute;
+    height: 85px;
+    width: 80px;
+    background-color: #D9D9D9;
+    border-radius: 40px 40px 0 0;
+    transform: translateX(0);
+    transition: 0.2s ease-in;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.slider::before{
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 25px;
+    bottom: 0;
+    left: -25px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 13px 0 0 #D9D9D9;
+}
+
+.slider::after{
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 25px;
+    bottom: 0;
+    right: -25px;
+    border-bottom-left-radius: 15px;
+    box-shadow: -13px 0 0 #D9D9D9;
+}
+
+input{display: none;}
+
+/* Transition for buttons */
+#tap1:checked ~ .slider {transform: translateX(4px);}
+#tap2:checked ~ .slider {transform: translateX(117px);}
+#tap3:checked ~ .slider {transform: translateX(230px);}
+#tap4:checked ~ .slider {transform: translateX(344px);}
+#tap5:checked ~ .slider {transform: translateX(460px);}
+#tap6:checked ~ .slider {transform: translateX(576px);}
+
+/* HEADER AREA */
+.document-area {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+img{
+    width: 1504px;
+    max-width: 100%;
+    max-height: 100%;
+}
+.document-text {
+    position: absolute;
+    top: 30%;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    margin-left: 75px;
+}
+
+.document-text h1 {
+    margin-top: 0;
+    font-size: 45px;
+}
