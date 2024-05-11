@@ -37,7 +37,7 @@
       position: absolute;
       height: 85px;
       width: 80px;
-      background-color: rgba(163, 137, 137, 0.279);
+      background-color: #D9D9D9;
       border-radius: 40px 40px 0 0;
       transform: translateX(0);
       transition: 0.2s ease-in;
@@ -53,7 +53,7 @@
       bottom: 0;
       left: -25px;
       border-bottom-right-radius: 15px;
-      box-shadow: 13px 0 0 rgba(163, 137, 137, 0.279);
+      box-shadow: 13px 0 0 #D9D9D9;
     }
 
     .slider::after{
@@ -64,7 +64,7 @@
       bottom: 0;
       right: -25px;
       border-bottom-left-radius: 15px;
-      box-shadow: -13px 0 0 rgba(163, 137, 137, 0.279);
+      box-shadow: -13px 0 0 #D9D9D9;
     }
 
     input{
@@ -73,27 +73,27 @@
 
     /* Updated CSS for slider */
     #tap1:checked ~ .slider {
-      transform: translateX(0);
+      transform: translateX(4px);
     }
 
     #tap2:checked ~ .slider {
-      transform: translateX(162px);
+      transform: translateX(117px);
     }
 
     #tap3:checked ~ .slider {
-      transform: translateX(324px);
+      transform: translateX(230px);
     }
 
     #tap4:checked ~ .slider {
-      transform: translateX(486px);
+      transform: translateX(344px);
     }
 
     #tap5:checked ~ .slider {
-      transform: translateX(648px);
+      transform: translateX(460px);
     }
 
     #tap6:checked ~ .slider {
-      transform: translateX(810px);
+      transform: translateX(576px);
     }
 
   </style>
@@ -150,6 +150,7 @@
       <input type="radio" id="tap3" name="tap">
       <input type="radio" id="tap4" name="tap">
       <input type="radio" id="tap5" name="tap">
+      <input type="radio" id="tap6" name="tap">
       <!-- Curved Navigation Menu Indicator -->
       <div class="slider"></div>      
       <!--Buttons -->
@@ -192,7 +193,7 @@
       </div>
       <div>
         <div>
-          <label for="top3">
+          <label for="tap3">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="none" viewBox="0 0 34 34">
               <path stroke="#000"/>
               <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" d="M27.997 12.11c0 7.06-10.822 15.298-10.822 15.298S6.353 19.17 6.353 12.11c0-5.768 4.928-10.591 10.822-10.591 5.895 0 10.822 4.823 10.822 10.591Z"/>
