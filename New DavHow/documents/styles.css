@@ -2,33 +2,64 @@
 
 body{
     background-color: #ECECEC;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.information-area div{
+.information-option div{
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
 }
 
 /* Centered buttons */
-.information-area{
+.information-option{
     justify-content: center;
     text-align: center;
 }
 
 /* Colored buttons */
-.information-area div div{
+.information-option div div{
     background: linear-gradient(to top, #003676, #0E71E4);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 50%;
     padding: 15px;
-    width: 39px;
+    width: 35px;
     position: relative;
 }
 
-.information-area div span {
+.information-option div span {
     display: block;
     margin-top: -5px; 
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Information box for details */
+.information-area{
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    margin: -8px 50px 0 50px;
+    height: auto;
+    padding: 20px 10px 20px 10px;
+}
+
+.info-box{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 1px 1px 1px 35px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.requirement-info h3 + p {
+    margin-top: -15px;
+}
+
+.information-area .icon {
+    position: absolute;
+    left: 5px; 
+    top: 45%;
+    transform: translateY(-50%);
 }
 
 /* Button area background */
@@ -38,7 +69,7 @@ body{
     align-items: center;
     background-color: #ffffff;
     border-radius: 70px;
-    width: 700px;
+    width: 620px;
     margin: 0 auto;
 }
 
@@ -46,9 +77,9 @@ body{
 .slider{
     position: absolute;
     height: 85px;
-    width: 80px;
+    width: 78px;
     background-color: #D9D9D9;
-    border-radius: 40px 40px 0 0;
+    border-radius: 55px 55px 0 0;
     transform: translateX(0);
     transition: 0.2s ease-in;
     justify-content: center;
@@ -62,7 +93,7 @@ body{
     width: 25px;
     bottom: 0;
     left: -25px;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 20px;
     box-shadow: 13px 0 0 #D9D9D9;
 }
 
@@ -73,23 +104,24 @@ body{
     width: 25px;
     bottom: 0;
     right: -25px;
-    border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 20px;
     box-shadow: -13px 0 0 #D9D9D9;
 }
 
 input{display: none;}
 
 /* Transition for buttons */
-#tap1:checked ~ .slider {transform: translateX(4px);}
-#tap2:checked ~ .slider {transform: translateX(117px);}
-#tap3:checked ~ .slider {transform: translateX(230px);}
-#tap4:checked ~ .slider {transform: translateX(344px);}
-#tap5:checked ~ .slider {transform: translateX(460px);}
-#tap6:checked ~ .slider {transform: translateX(576px);}
+#tap1:checked ~ .slider {transform: translateX(5px);}
+#tap2:checked ~ .slider {transform: translateX(101px);}
+#tap3:checked ~ .slider {transform: translateX(191px);}
+#tap4:checked ~ .slider {transform: translateX(280px);}
+#tap5:checked ~ .slider {transform: translateX(379px);}
+#tap6:checked ~ .slider {transform: translateX(480px);}
 
 /* HEADER AREA */
 .document-area {
     position: relative;
+    font-style: italic;
 }
 
 .image-wrapper {
@@ -105,12 +137,77 @@ img{
     position: absolute;
     top: 30%;
     color: rgb(0, 0, 0);
-    font-family: 'Roboto Condensed', sans-serif;
-    font-style: italic;
     margin-left: 75px;
 }
 
 .document-text h1 {
     margin-top: 0;
     font-size: 45px;
+}
+
+/* LOCATION */
+.location-info{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.location-details{
+    background-color: white;
+    padding: 12px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+/* Font for location name */
+.location-details p:nth-child(1){
+    font-size: 20px;
+}
+
+.location-details td{
+    border-bottom: 1px solid #c0c0c0; /*Mas better ata if one line for each row*/
+    padding: 3px 0 3px 0;
+}
+
+/* For vertical list in location-details */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Adjuster of gmaps based on list lengths */
+.location-info iframe {
+    flex: 1;
+    align-items: stretch;
+}
+
+/* FEE */
+.fee-info {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%; 
+}
+
+.fee {
+    background-color: white; 
+    padding: 12px;
+}
+
+.fee table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.fee td {
+    padding: 8px; 
+    text-align: center; 
+}
+
+.fee td[rowspan] {
+    vertical-align: middle; 
+}
+
+.fee table tr + td{
+    
 }
