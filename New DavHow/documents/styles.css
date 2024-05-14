@@ -26,12 +26,18 @@ body{
     position: relative;
 }
 
+.information-option div div:hover {
+    background: linear-gradient(to top, #75AAE8, #0075FF);
+}
+
 .information-option div span {
     display: block;
     margin-top: -5px; 
     text-align: center;
     position: relative;
     z-index: 1;
+    width: 100px;
+    height: 30px;
 }
 
 /* Information box for details */
@@ -41,6 +47,7 @@ body{
     margin: -8px 50px 0 50px;
     height: auto;
     padding: 20px 10px 20px 10px;
+    margin-top: -10px;
 }
 
 .info-box{
@@ -69,7 +76,7 @@ body{
     align-items: center;
     background-color: #ffffff;
     border-radius: 70px;
-    width: 620px;
+    width: 730px;
     margin: 0 auto;
 }
 
@@ -77,13 +84,16 @@ body{
 .slider{
     position: absolute;
     height: 85px;
-    width: 78px;
+    width: 98px;
     background-color: #D9D9D9;
     border-radius: 55px 55px 0 0;
     transform: translateX(0);
     transition: 0.2s ease-in;
     justify-content: center;
     margin-left: 10px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 5px;
 }
 
 .slider::before{
@@ -111,12 +121,12 @@ body{
 input{display: none;}
 
 /* Transition for buttons */
-#tap1:checked ~ .slider {transform: translateX(5px);}
-#tap2:checked ~ .slider {transform: translateX(101px);}
-#tap3:checked ~ .slider {transform: translateX(191px);}
-#tap4:checked ~ .slider {transform: translateX(280px);}
-#tap5:checked ~ .slider {transform: translateX(379px);}
-#tap6:checked ~ .slider {transform: translateX(480px);}
+#tap1:checked ~ .slider {transform: translateX(-2px);}
+#tap2:checked ~ .slider {transform: translateX(110px);}
+#tap3:checked ~ .slider {transform: translateX(224px);}
+#tap4:checked ~ .slider {transform: translateX(339px);}
+#tap5:checked ~ .slider {transform: translateX(453px);}
+#tap6:checked ~ .slider {transform: translateX(565px);}
 
 /* HEADER AREA */
 .document-area {
@@ -126,6 +136,9 @@ input{display: none;}
 
 .image-wrapper {
     position: relative;
+    z-index: -1;
+    height: 300px;
+    margin-bottom: -44px;   
 }
 
 img{
