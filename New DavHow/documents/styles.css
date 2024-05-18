@@ -40,7 +40,7 @@ body{
     height: 30px;
 }
 
-/* Information box for details */
+/* -------------------------INFORMATION BOX--------------------------------  */
 .information-area{
     background-color: #D9D9D9;
     border-radius: 20px;
@@ -58,7 +58,7 @@ body{
     position: relative;
 }
 
-.requirement-info h3 + p {
+.requirement-info h3 + p,  .procedure-info h3 + p{
     margin-top: -15px;
 }
 
@@ -69,7 +69,7 @@ body{
     transform: translateY(-50%);
 }
 
-/* Button area background */
+/* ---------------------------BUTTON AREA BACKGROUND----------------------------------  */
 .button-area {
     display: flex;
     justify-content: center;
@@ -80,11 +80,11 @@ body{
     margin: 0 auto;
 }
 
-/*SLIDER*/
+/* ---------------------------SLIDER----------------------------------  */
 .slider{
     position: absolute;
     height: 85px;
-    width: 98px;
+    width: 72px;
     background-color: #D9D9D9;
     border-radius: 55px 55px 0 0;
     transform: translateX(0);
@@ -121,14 +121,14 @@ body{
 input{display: none;}
 
 /* Transition for buttons */
-#tap1:checked ~ .slider {transform: translateX(-2px);}
-#tap2:checked ~ .slider {transform: translateX(110px);}
-#tap3:checked ~ .slider {transform: translateX(224px);}
-#tap4:checked ~ .slider {transform: translateX(339px);}
-#tap5:checked ~ .slider {transform: translateX(453px);}
-#tap6:checked ~ .slider {transform: translateX(565px);}
+#tap1:checked ~ .slider {transform: translateX(10px);}
+#tap2:checked ~ .slider {transform: translateX(124px);}
+#tap3:checked ~ .slider {transform: translateX(238px);}
+#tap4:checked ~ .slider {transform: translateX(351px);}
+#tap5:checked ~ .slider {transform: translateX(465px);}
+#tap6:checked ~ .slider {transform: translateX(578px);}
 
-/* HEADER AREA */
+/* ---------------------------DOCUMENT TITLE AREA----------------------------------  */
 .document-area {
     position: relative;
     font-style: italic;
@@ -158,7 +158,7 @@ img{
     font-size: 45px;
 }
 
-/* LOCATION */
+/* ---------------------------LOCATION----------------------------------  */
 .location-info{
     display: flex;
     align-items: stretch;
@@ -167,17 +167,23 @@ img{
 
 .location-details{
     background-color: white;
-    padding: 12px;
+    padding: 11px;
     border-bottom: 1px solid #c0c0c0;
 }
 
 /* Font for location name */
 .location-details p:nth-child(1){
     font-size: 20px;
+    margin-top: 0px;
+}
+
+/* Margin for address */
+.location-details p:nth-child(2){
+    margin-top: -15px;
 }
 
 .location-details td{
-    border-bottom: 1px solid #c0c0c0; /*Mas better ata if one line for each row*/
+    border-bottom: 1px solid #c0c0c0; 
     padding: 3px 0 3px 0;
 }
 
@@ -185,42 +191,190 @@ img{
 .details-container {
     display: flex;
     flex-direction: column;
-    
+    overflow: scroll;
+    height: 450px;
 }
 
 /* Adjuster of gmaps based on list lengths */
 .location-info iframe {
-    flex: 1;
-    align-items: stretch;
+    width: 81%
 }
 
-/* FEE */
+
+/* ---------------------------FEES----------------------------------  */
 .fee-info {
     display: flex;
     justify-content: center;
     align-items: center; 
     height: 100%; 
+    display: grid;
 }
 
 .fee {
-    background-color: white; 
     padding: 12px;
+    border-radius: 19px; 
+    letter-spacing: 1px;
+    margin-top: 10px;
+    background-color: white;
 }
 
 .fee table {
-    width: 100%; 
-    border-collapse: collapse; 
+    width: 600px; 
+    border-collapse: collapse;
 }
 
 .fee td {
-    padding: 8px; 
-    text-align: center; 
+    padding-right: 20px;
 }
 
 .fee td[rowspan] {
     vertical-align: middle; 
+    text-align: end;
 }
 
-.fee table tr + td{
-    
+.fee .fee-name{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.fee .fee-location{
+    font-size: 14px;
+    margin-top: -3px;
+}
+
+.fee .fee-total{
+    font-size: 18px;   
+}
+
+.total-fee {
+    background-color: #649aaf;
+}
+
+/* ---------------------------REFERENCES----------------------------------  */
+.article-reference{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.reference-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
+}
+
+.article-reference {
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center; 
+}
+
+.article-reference a {
+    text-decoration: none;
+    color: black;
+    display: block; 
+}
+.article-reference a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+/* ------------------------SAMPLE PHOTOS-------------------------------  */
+.samplephoto-info p{
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.samplephoto-info img{
+    width: 45%;
+    display: block;
+    margin: 0 auto; 
+}
+
+.img-magnifier-container {
+    position:relative;
+}
+  
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+}
+
+/* ---------------------------FOOTER----------------------------------  */
+footer{
+    text-align: center;
+    background-color: #071356;
+    padding: 5px 0;
+}
+
+footer p, footer i{
+    color: #fff;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    width: 100%;
+    height: 250px;
+    padding-left: 120px;
+}
+
+/* Style for each row */
+.table-row {
+    display: flex;
+}
+
+.table-row1 {
+    display: flex;
+    padding-top: 70px;
+    padding-bottom: 5px;
+}
+
+.table-row1 .table-cell{
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+/* Style for each cell */
+.table-cell {
+    flex: 1;
+    text-align: left;
+    font-size: 14px;
+    padding: 2px;
+    padding-right: 100px;
+}
+
+.table-cell a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.table-cell a:hover {
+    text-decoration: none;
+    color: #009DD1;
+}
+
+.container5 {
+    background-color: #101d65;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.container5 .table-cell{
+    color: #fff;
 }
