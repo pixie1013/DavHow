@@ -89,3 +89,13 @@ function updateDate() {
 }
 
 updateDate();
+
+document.addEventListener('DOMContentLoaded', function() {
+  AOS.init({
+    duration: 1000, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Easing function for the animation
+    once: true, // Whether animation should happen only once - while scrolling down
+    mirror: false, // Whether elements should animate out while scrolling past them
+  });
+});
+
