@@ -192,7 +192,9 @@ img{
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
     height: 450px;
+    background-color: white;
 }
 
 /* Adjuster of gmaps based on list lengths */
