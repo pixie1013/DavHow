@@ -1,0 +1,737 @@
+:root {
+    --header-height: 3.5rem;
+    /*========== color palette ==========*/
+    --first-color: #023047;
+    --second-color: #8ECAE6;
+    --third-color: #ffffff;
+    --fourth-color: #FFB703;
+    --container-color: #C2E5F5;
+    --bg-color: #ececec;
+    --footer-color: #034F75;
+     /*========== z index ==========*/
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+      /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Lexend";
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+@media screen and (min-width: 1023px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --normal-font-size: 1rem;
+    }
+  }
+
+.container {
+    max-width: 100%;
+    padding-inline: 1.5rem;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+body {
+    background-color: #ececec;
+    color: var(--text-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+  
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+  
+input, button {
+    border: none;
+    outline: none;
+}
+  
+ul {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+}
+  
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 3%;
+}
+
+.Tagline {
+    display: flex;
+    font-family: Roboto Condensed;
+    font-style: italic;
+    font-size: .7rem;
+    font-weight: 400;
+}
+
+.nav_tag {
+    color: var(--third-color);
+}
+
+.Brand {
+    display: flex;
+    font-weight: var(--font-semi-bold);
+    font-size: 1rem;
+}
+
+.search, .login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-modal);
+    background-color: hsla(230, 75%, 32%, .1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 8rem 1.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s;
+}
+
+.search__close,
+.login__close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--third-color);
+    cursor: pointer;
+}
+
+/* ========= NavBar ========== */
+.header {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--first-color);
+    z-index: var(--z-fixed);
+}
+
+.header1 {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--bg-color);
+    z-index: calc(var(--z-fixed) + 1);
+}
+
+.top-bar {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1.5rem;
+}
+
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_actions {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.socmeds {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav_search, .nav_login,
+.nav_toggle,.nav_close {
+    font-size: 1.25rem;
+    color: var(--third-color);
+    cursor: pointer;
+    transition: color .4s;
+}
+
+:is(.nav_search, .nav_link, .nav_login, .nav_toggle):hover {
+    color: var(--second-color);
+    font-weight: 700;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1023px){
+    .nav_menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--first-color);
+        width: 100%;
+        padding-block: 4.5rem 2rem;
+        transition: top .4s;
+
+    }
+}
+
+.nav_link {
+    color: var(--third-color);
+    transition: color .4s;
+}
+
+.nav_close {
+    position: absolute;
+    top: 4.15rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    top: 2.15rem;
+}
+
+.search__form {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--third-color);
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    padding-inline: 1rem;
+    border-radius: .5rem;
+    transform: translateY(-1rem);
+    transition: transform .4s;
+}
+
+.search__icon {
+    font-size: 1.25rem;
+    color: var(--first-color);
+}
+
+.search__input {
+    width: 100%;
+    padding-block: 1rem;
+    background-color: var(--third-color);
+    color: var(--first-color);
+}
+
+.show-search {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-search .search__form {
+    transform: translateY(0);
+}
+
+.login__form, .login__group {
+    display: grid;
+}
+
+.login__form {
+    background-color: var(--first-color);
+    padding: 2rem 1.5rem 2.5rem;
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    border-radius: 1rem;
+    row-gap: 1.25rem;
+    text-align: center;
+    transform: translateY(-1rem);
+    transition: transform .4s;
+}
+
+.login__title {
+    font-size: var(--h2-font-size);
+    color: var(--third-color);
+}
+
+.login__group {
+    row-gap: 1rem;
+}
+
+.login__label {
+    display: block;
+    text-align: initial;
+    color: var(--third-color);
+    font-weight: var(--font-medium);
+    margin-bottom: .25rem;
+}
+
+.login__input {
+    width: 100%;
+    background-color: var(--third-color);
+    border: 2px solid var(--third-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    color: var(--first-color);
+}
+
+.login__signup {
+    margin-bottom: .5rem;
+    color: var(--third-color);
+}
+
+.login__signup a{
+    color: var(--second-color)
+}
+
+.login__forgot {
+    display: inline;
+    color: var(--second-color);
+    margin-bottom: 1.5rem;
+}
+
+.login__button {
+    display: inline-block;
+    background-color: var(--bg-color);
+    width: 100%;
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    padding: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: box-shadow .4s;
+    margin-bottom: 1rem;
+}
+
+.login__forgot:hover , .login__signup a:hover {
+    font-size: 1.1rem;
+    color: var(--container-color);
+}
+
+.login__button:hover {
+    background-color: var(--second-color);
+    transition: color .4s;
+}
+
+.show-login {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-login .login__form {
+    transform: translateY(-1rem);
+}
+
+.time {
+    font-size: .8rem;
+    text-align: right;
+}
+
+.display-time {
+    transition: ease-in-out 0.1s;
+    transition-property: background, box-shadow, color;
+}
+
+.socmeds a{
+    color: var(--first-color);
+}
+
+.socmeds a:hover {
+    color: var(--second-color);
+}
+
+/* ========= Welcome Part ========== */
+
+.home__container {
+    display: ruby-text;
+    padding-top: 10rem;
+    height: 35rem;
+    justify-content: center;
+    row-gap: 2rem;
+    padding-right: 3rem;
+    background-image: url("photos/image\ 3.svg");
+}
+
+.home__data {
+    position: relative;
+    text-align: center;
+}
+
+.home__title{
+    font-family: "Roboto";
+    font-weight: 550;
+    font-size: 5rem;
+    line-height: 100%;
+    color: var(--first-color);
+}
+
+.home__description {
+    margin-bottom: 2rem;
+}
+
+.home__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.catalog_button {
+    background-color: var(--fourth-color);
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    padding: .75rem 2rem;
+    border-radius: 4rem;
+}
+
+.home__img {
+    max-width: 600px;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-wrapper h1 {
+    margin: 10px;
+    font-size: 3rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    position: relative;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.card {
+    height: auto;
+    width: 370px;
+    background-color: var(--third-color);
+    padding: 3% 8%;
+    border: 0.2px solid #b2b2b2;
+    border-radius: 8px;
+    transition: .6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after {
+    content: "";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    transform: rotate(50deg);
+    background-color: var(--first-color);
+    height: 18px;
+    filter: blur(30px);
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.card:hover:after {
+    width: 225%;
+    top: -100%;
+}
+
+.card i {
+    color: var(--first-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card p {
+    text-align: center;
+    width: 100%;
+    margin: 12px 0;
+    font-size: .9rem;
+    text-align: justify;
+}
+
+.card:hover {
+    background-color: transparent;
+    transform: translateY(-8px);
+}
+
+.rationale_container,
+.mission,
+.vision {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.rationale {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.rationale h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.visioncontainer, .missioncontainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mission img,
+.vision img {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd; /* Placeholder for images */
+    border-radius: 8px;
+}
+
+.objective-text {
+    background-color: var(--third-color);
+}
+
+/* ========= Footer CSS ========== */
+footer {
+    width: 100%;
+    bottom: 0;
+    background-color: var(--first-color);
+    color: var(--third-color);
+    padding: 50px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+
+}
+
+.footerlogo {
+    width: 100px;
+}
+
+.footertag {
+    font-size: .8rem;
+}
+
+.footerrow {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 15%;
+}
+
+.col h3 {
+    width: fit-content;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+footer ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.socmeds1 {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: #ffffff;
+}
+
+.socmeds1 a{
+    color: var(--third-color);
+    font-size: 1.25rem;
+}
+
+.socmeds1 a:hover {
+    color: var(--second-color);
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+}
+
+/* ========= Breakpoints ========== */
+
+
+@media (max-width: 768px) {
+    .vision, .mission {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vision img,
+    .mission img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ========= NavBar ========== */
+@media screen and (min-width: 567px){
+    .search, .login {
+        padding-top: 10rem;
+    }
+
+    .search__form {
+        max-width: 450px;
+        margin-inline: auto;
+    }
+
+    .search__close, .login__close {
+        width: max-content;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        font-size: 2rem;
+    }
+
+    .login__form {
+        max-width: 400px;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width: 1023px){
+    .nav {
+        column-gap: 3rem;
+    }
+
+    .nav_close, .nav_toggle {
+        display: none;
+    }
+
+    .nav_menu {
+        margin-left: auto;
+    }
+
+    .nav_list {
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+
+    .login__form {
+        padding: 3rem 2rem 3.5rem;
+    }
+
+    .home__container {
+        display: flex;
+        margin-inline: auto;
+        grid-template-columns: 420px 585px;
+        align-items: center;
+        column-gap: 6rem;
+        padding-top: 10rem;
+
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .Tagline, .Brand, .time {
+        font-size: .5rem;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+}
+
+/* ========= End of NavBar BP ========== */
+
+@media screen and (max-width: 1025px) {
+    .home__img {
+        display: flex;
+        max-width: 350px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+    .services-wrapper h1 {
+        font-size: 3.5rem;
+    }
+
+}
