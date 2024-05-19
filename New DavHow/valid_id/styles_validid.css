@@ -5,6 +5,11 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: #071356;
+}
+
 .information-option div{
     display: inline-block;
     margin: 5px;
@@ -192,7 +197,9 @@ img{
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    overflow-x: hidden;
     height: 450px;
+    background-color: white;
 }
 
 /* Adjuster of gmaps based on list lengths */
