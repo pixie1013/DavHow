@@ -137,11 +137,36 @@ a{
     text-decoration: none; 
 }
 
-
 .requirement-info h3 + p,  .procedure-info h3 + p{
     margin-top: -15px;
 }
 
+.subtype .category{
+    background-color: rgb(95, 119, 146);
+    display: block;
+    width: 50%;
+    margin: 10px auto; 
+    border-radius: 15px;
+    padding: 10px 10px 10px 15px; 
+    text-align: center; 
+    font-weight: 400;
+}
+
+.category{
+    background-color: rgb(95, 119, 146);
+    display: block;
+    width: 95%;
+    margin: 10px auto; 
+    border-radius: 15px;
+    padding: 10px 10px 10px 15px; 
+    text-align: center; 
+    font-weight: 400;
+}
+
+.subtype-text{
+    font-size: 20px;
+    margin: 16px 0px 10px 28px;
+}
 /* ---------------------------BUTTON AREA BACKGROUND----------------------------------  */
 .button-area {
     display: flex;
