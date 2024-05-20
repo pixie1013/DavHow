@@ -167,7 +167,7 @@ a {
 
 
 .nav {
-    height: var(--header-height);
+    height: 36px;
     display: flex;
     justify-content: space-between;
     align-items: center;
