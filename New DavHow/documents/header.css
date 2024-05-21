@@ -135,6 +135,11 @@ a {
     cursor: pointer;
 }
 
+.search__form input, .login__form input{
+    display:block;
+}
+
+
 /* ========= NavBar ========== */
 .header {
     position: fixed;
