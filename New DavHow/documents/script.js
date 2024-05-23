@@ -332,3 +332,29 @@ function magnify(imgID, zoom) {
         return {x : x, y : y};
     }
 }
+
+// New script
+// Show subtypes
+const eligibilityTypes = document.querySelectorAll('.eligibility-type');
+const subType = document.querySelectorAll('.subtype-text');
+eligibilityTypes.forEach(eligibilityType => {
+    eligibilityType.addEventListener('click', function() {
+        const infoBoxes = this.parentElement.querySelectorAll('.info-box');
+        for (let i = 1; i < infoBoxes.length; i++) {
+            infoBoxes[i].style.display = infoBoxes[i].style.display === 'none' ? 'block' : 'none';
+        }
+    });
+});
+
+subType.forEach(subType => {
+    subType.addEventListener('click', function() {
+        let sibling = subType.parentNode.firstElementChild;
+
+        while (sibling) {
+            if (sibling !== subType && sibling.classList.contains('info-box')) {
+                sibling.style.display = sibling.style.display === 'none' ? 'block' : 'none';
+            }
+            sibling = sibling.nextElementSibling;
+        }
+    });
+});
