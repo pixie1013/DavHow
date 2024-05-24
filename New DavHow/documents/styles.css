@@ -183,7 +183,6 @@ img{
 
 
 /* PROCEDURE INFO BOX */
-/* PROCEDURE INFO BOX */
 .procedure-number {
     border-radius: 50%;
     background-color: #023D82;
@@ -227,14 +226,10 @@ img{
     margin: 16px 0px 10px 28px;
 }
 
-/* New Style */
 .subtype {
     cursor: pointer;
 }
 
-.subtype:hover {
-    color:#003676;
-}
 .subtype-text:hover{
     font-size: larger;
 }

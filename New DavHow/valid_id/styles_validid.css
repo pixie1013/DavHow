@@ -34,6 +34,11 @@ a{
     box-sizing: content-box !important;
 }
 
+.information-option div div:hover{
+    background: linear-gradient(to top, #75AAE8, #0075FF) !important;
+    box-shadow: 0 0px 0 0 rgba(0,0,0,0.3), 0  0 0 rgba(0,0,0,0.25) !important;
+}
+
 .information-option div div:hover {
     background: linear-gradient(to top, #75AAE8, #0075FF);
 }
@@ -154,32 +159,61 @@ a{
 }
 
 .subtype .category{
-    background-color: rgb(95, 119, 146);
-    display: block;
+    background-color: rgb(4 43 89) !important;
+    display: flex;
     width: 50%;
     margin: 10px auto; 
     border-radius: 15px;
     padding: 10px 10px 10px 15px; 
-    text-align: center; 
     font-weight: 400;
     font-size: 20px;
+    color: white;
 }
 
 .category{
-    background-color: rgb(95, 119, 146);
+    background-color: rgb(4 43 89) !important;
     display: block;
     width: 100%;
     margin: 10px auto; 
     border-radius: 15px;
     padding: 10px 10px 10px 15px; 
-    text-align: center; 
     font-weight: 400;
     font-size: 20px;
+    color: white;
+}
+
+.category:hover{
+    background-color: #000a31 !important;
+    border: 1px rgb(234, 244, 255) solid;
+}
+
+.category img, .subtype-text img{
+   width: 30px;
+   height: 30px;
+   transition: transform 0.3s; 
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+.category p, .subtype-text p{
+    margin: 2px;
 }
 
 .subtype-text{
     font-size: 20px;
     margin: 16px 0px 10px 28px;
+    display: flex;
+}
+
+.subtype {
+    cursor: pointer;
+}
+
+.subtype-text:hover{
+    font-size: larger;
+    color:#003676;
 }
 
 .requirement-info ul, .procedure-info ul{
@@ -332,7 +366,7 @@ img{
 
 /* Adjuster of gmaps based on list lengths */
 .location-info iframe {
-    width: 81%
+    width: 80%
 }
 
 
@@ -346,7 +380,7 @@ img{
 }
 
 .fee-info p{
-    color: #888888;
+    background-color: rgb(4 43 89) !important;
     text-align: center;
 }
 
@@ -387,7 +421,8 @@ img{
 }
 
 .total-fee {
-    background-color: #649aaf;
+    background-color: rgb(4 43 89) !important;
+    color: white;
 }
 
 /* ---------------------------REFERENCES----------------------------------  */
