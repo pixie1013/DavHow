@@ -341,7 +341,7 @@ eligibilityTypes.forEach(eligibilityType => {
     eligibilityType.addEventListener('click', function() {
         const infoBoxes = this.parentElement.querySelectorAll('.info-box');
         for (let i = 1; i < infoBoxes.length; i++) {
-            infoBoxes[i].style.display = infoBoxes[i].style.display === 'none' ? 'block' : 'none';
+            infoBoxes[i].style.display = infoBoxes[i].style.display === 'block' ? 'none' : 'block';
         }
     });
 });
@@ -352,9 +352,30 @@ subType.forEach(subType => {
 
         while (sibling) {
             if (sibling !== subType && sibling.classList.contains('info-box')) {
-                sibling.style.display = sibling.style.display === 'none' ? 'block' : 'none';
+                sibling.style.display = sibling.style.display === 'block' ? 'none' : 'block';
             }
             sibling = sibling.nextElementSibling;
         }
+    });
+});
+
+// ROTATE ICON
+document.addEventListener('DOMContentLoaded', () => {
+    const categories = document.querySelectorAll('requirement-info');
+
+    categories.forEach(category => {
+        category.addEventListener('click', function() {
+            const icon = this.querySelector('img');
+            icon.classList.toggle('rotated');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const eligibilityType = document.querySelector('.eligibility-type');
+
+    eligibilityType.addEventListener('click', function() {
+        const icon = this.querySelector('img');
+        icon.classList.toggle('rotated');
     });
 });

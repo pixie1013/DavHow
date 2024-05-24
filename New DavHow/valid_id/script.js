@@ -215,38 +215,33 @@ document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
 updateDate();
 
 // HIDDEN INFO BOX
-document.addEventListener('DOMContentLoaded', () => {
-    const categories = document.querySelectorAll('.category');
-    const subtypeTexts = document.querySelectorAll('.subtype-text');
+const categories = document.querySelectorAll('.category');
 
-    // Hide all info-box elements initially
-    const infoBoxes = document.querySelectorAll('.info-box');
-    infoBoxes.forEach(infoBox => {
-        infoBox.style.display = 'none';
-    });
-
-    // Function to toggle display of info-box elements
-    const toggleInfoBoxes = (event) => {
-        const parent = event.currentTarget.parentElement;
-        const infoBoxes = parent.querySelectorAll('.info-box');
+categories.forEach(category => {
+    category.addEventListener('click', function() {
+        const infoBoxes = this.parentElement.querySelectorAll('.info-box');
         infoBoxes.forEach(infoBox => {
-            if (infoBox.style.display === 'none' || infoBox.style.display === '') {
-                infoBox.style.display = 'block';
-            } else {
-                infoBox.style.display = 'none';
-            }
+            // Toggle display of info boxes
+            infoBox.style.display = infoBox.style.display === 'block' ? 'none' : 'block';
         });
-    };
-
-    // Add event listeners to categories and subtype-texts
-    categories.forEach(category => {
-        category.addEventListener('click', toggleInfoBoxes);
-    });
-
-    subtypeTexts.forEach(subtypeText => {
-        subtypeText.addEventListener('click', toggleInfoBoxes);
     });
 });
+
+const subtypeTexts = document.querySelectorAll('.subtype-text');
+
+subtypeTexts.forEach(subtypeText => {
+    subtypeText.addEventListener('click', function() {
+        const infoBoxes = this.parentElement.querySelectorAll('.info-box');
+        infoBoxes.forEach(infoBox => {
+            // Toggle display of info boxes
+            infoBox.style.display = infoBox.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+});
+
+
+
+
 
 // ROTATE ICON
 document.addEventListener('DOMContentLoaded', () => {

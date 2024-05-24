@@ -254,7 +254,9 @@ img{
 }
 
 .requirement-info .info-box:first-of-type {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .requirement-info h3,
@@ -314,6 +316,21 @@ img{
 .requirement-info h3 + p{
     margin-top: -15px;
 }
+
+.eligibility-type img, .subtype-text img{
+   width: 30px;
+   height: 30px;
+   transition: transform 0.3s; 
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+.eligibility-type p, .subtype-text p{
+    margin: 2px;
+}
+
 
 /* ---------------------------LOCATION----------------------------------  */
 .location-info{
