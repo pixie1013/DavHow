@@ -220,6 +220,17 @@ a{
     margin-left: 25px; 
     text-align: left;
 }
+
+/* New styles  */
+.category ~ .info-box{
+    display: none;
+}
+
+.subtype .info-box{
+    display: none;
+}
+
+
 /* ---------------------------BUTTON AREA BACKGROUND----------------------------------  */
 .button-area {
     display: flex;
