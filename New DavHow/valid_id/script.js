@@ -213,3 +213,84 @@ document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
 }
 
 updateDate();
+
+// HIDDEN INFO BOX
+document.addEventListener('DOMContentLoaded', () => {
+    const categories = document.querySelectorAll('.category');
+    const subtypeTexts = document.querySelectorAll('.subtype-text');
+
+    // Hide all info-box elements initially
+    const infoBoxes = document.querySelectorAll('.info-box');
+    infoBoxes.forEach(infoBox => {
+        infoBox.style.display = 'none';
+    });
+
+    // Function to toggle display of info-box elements
+    const toggleInfoBoxes = (event) => {
+        const parent = event.currentTarget.parentElement;
+        const infoBoxes = parent.querySelectorAll('.info-box');
+        infoBoxes.forEach(infoBox => {
+            if (infoBox.style.display === 'none' || infoBox.style.display === '') {
+                infoBox.style.display = 'block';
+            } else {
+                infoBox.style.display = 'none';
+            }
+        });
+    };
+
+    // Add event listeners to categories and subtype-texts
+    categories.forEach(category => {
+        category.addEventListener('click', toggleInfoBoxes);
+    });
+
+    subtypeTexts.forEach(subtypeText => {
+        subtypeText.addEventListener('click', toggleInfoBoxes);
+    });
+});
+
+// ROTATE ICON
+document.addEventListener('DOMContentLoaded', () => {
+    const categories = document.querySelectorAll('.category');
+
+    categories.forEach(category => {
+        category.addEventListener('click', function() {
+            const icon = this.querySelector('img');
+            icon.classList.toggle('rotated');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const categories = document.querySelectorAll('.subtype-text');
+
+    categories.forEach(category => {
+        category.addEventListener('click', function() {
+            const icon = this.querySelector('img');
+            icon.classList.toggle('rotated');
+        });
+    });
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all location details elements
+        const locationDetails = document.querySelectorAll('.location-details');
+
+        // Loop through each location details element
+        locationDetails.forEach(function(location, index) {
+            // Add click event listener to the location name
+            location.querySelector('p').addEventListener('click', function() {
+                // Hide all iframes
+                const iframes = document.querySelectorAll('.location-info iframe');
+                iframes.forEach(function(iframe) {
+                    iframe.hidden = true;
+                });
+
+                // Show the corresponding iframe
+                const iframeToShow = document.querySelector(`.location-info iframe:nth-child(${index + 1})`);
+                if (iframeToShow) {
+                    iframeToShow.hidden = false;
+                }
+            });
+        });
+    });
+

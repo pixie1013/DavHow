@@ -53,7 +53,7 @@
 }
   
 body {
-    background-color: #ececec;
+    background-color: var(--bg-color);
     color: var(--text-color);
 }
 
@@ -101,6 +101,7 @@ a {
 
 .nav_tag {
     color: var(--third-color);
+    margin-right: -170px;
 }
 
 .Brand {
@@ -185,12 +186,20 @@ a {
     column-gap: 1rem;
 }
 
-.nav_search, .nav_login,
+.nav_search,
 .nav_toggle,.nav_close {
     font-size: 1.25rem;
     color: var(--third-color);
     cursor: pointer;
     transition: color .4s;
+}
+
+.nav_login {
+    font-size: 1.25rem;
+    color: var(--first-color);
+    cursor: pointer;
+    transition: color .4s;
+    padding-left: 130px;
 }
 
 :is(.nav_search, .nav_link, .nav_login, .nav_toggle):hover {
@@ -354,10 +363,23 @@ a {
     transform: translateY(-1rem);
 }
 
+.top-left {
+    display: flex;
+    flex-direction: column;
+}
+
 .time {
     font-size: .8rem;
-    text-align: right;
 }
+
+.display-date {
+    width: 150px;
+}
+
+#day {
+    font-weight: 600;
+}
+  
 
 .display-time {
     transition: ease-in-out 0.1s;
@@ -366,6 +388,7 @@ a {
 
 .socmeds a{
     color: var(--first-color);
+    font-size: 1.25rem;
 }
 
 .socmeds a:hover {
@@ -577,7 +600,8 @@ footer ul li a {
 }
 
 .socmeds1 a:hover {
-    color: var(--second-color);
+    color: var(--container-color);
+    font-size: 1.5rem;
 }
 
 hr {
@@ -782,10 +806,6 @@ hr {
         display: none;
     }
 
-    .nav_menu {
-        margin-left: auto;
-    }
-
     .nav_list {
         flex-direction: row;
         column-gap: 3rem;
@@ -842,6 +862,10 @@ hr {
         font-size: 3.5rem;
     }
 
+    .socmeds i {
+        font-size: 1rem;
+    }
+
 }
 
 @media screen and (max-width: 895px) {
@@ -871,42 +895,52 @@ hr {
     }
 }
 
-
 .banner {
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-      url(./images/banner.jpg);
+    height: 70vh;
+    background-image: linear-gradient(rgba(196, 236, 255, 0.75),rgba(196, 236, 255, 0.75)),
+      url(photos/image\ 10.svg);
     background-size: cover;
     background-position: center;
-  }
+}
   
-  .logo1 {
+.logo1 {
     width: 500px;
     cursor: pointer;
-  }
+}
   
-  .content {
+.content {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 38%;
     transform: translateY(-50%);
     text-align: center;
-    color: #fff;
+    color: var(--first-color);
   }
   
-  .content h1 {
-    font-size: 70px;
+.content h1 {
+    font-size: 60px;
     margin-top: 80px;
-  }
+    text-shadow: 0 0 15px rgb(215, 215, 215);
+}
+
+.content .a2 {
+    color: #02218E;
+}
+
+.content .a3 {
+    color: #FFB703;
+}
   
-  .content p {
-    margin: 20px auto;
-    font-weight: 100;
+.content p {
+    margin: 10px auto;
     line-height: 25px;
-  }
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-family: "Roboto";
+}
   
-  .cover {
+.cover {
     background: #009688;
     height: 100%;
     width: 0%;
@@ -916,7 +950,7 @@ hr {
     bottom: 0;
     z-index: -1;
     transition: 0.5s;
-  }
+}
   
   button:hover span {
     width: 100%;
@@ -930,15 +964,15 @@ hr {
   .product {
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
   }
   
   .product-category {
     padding: 0 10vw;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-family: "Roboto";
   }
   
   .product-container {
@@ -964,23 +998,14 @@ hr {
     width: 100%;
     height: 350px;
     overflow: hidden;
+    border: 1px solid var(--first-color);
+    border-radius: 12px;
   }
   
   .product-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .discount-tag {
-    position: absolute;
-    background: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    color: #ff7d7d;
-    right: 10px;
-    top: 10px;
-    text-transform: capitalize;
   }
   
   .card-btn {
@@ -993,11 +1018,13 @@ hr {
     text-transform: capitalize;
     border: none;
     outline: none;
-    background: #fff;
+    background: var(--first-color);
     border-radius: 5px;
     transition: 0.5s;
     cursor: pointer;
     opacity: 0;
+    color: var(--third-color);
+    font-family: "Roboto";
   }
   
   .product-card:hover .card-btn {
@@ -1005,8 +1032,8 @@ hr {
   }
   
   .card-btn:hover {
-    background: #ff7d7d;
-    color: #fff;
+    background: var(--container-color);
+    color: var(--first-color);
   }
   
   .product-info {
@@ -1016,35 +1043,16 @@ hr {
   }
   
   .product-brand {
-    text-transform: uppercase;
-  }
-  
-  .product-short-description {
-    width: 100%;
-    height: 20px;
-    line-height: 20px;
-    overflow: hidden;
-    opacity: 0.5;
-    text-transform: capitalize;
-    margin: 5px 0;
-  }
-  
-  .price {
-    font-weight: 900;
-    font-size: 20px;
-  }
-  
-  .actual-price {
-    margin-left: 20px;
-    opacity: 0.5;
-    text-decoration: line-through;
+    font-family: "Roboto Condensed";
+    font-size: 16px;
+    text-align: center;
   }
   
   .pre-btn,
   .nxt-btn {
     border: none;
     width: 10vw;
-    height: 100%;
+    height: 90%;
     position: absolute;
     top: 0;
     display: flex;
@@ -1074,62 +1082,32 @@ hr {
     opacity: 1;
   }
   
-  .collection-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
   
-  .collection {
-    position: relative;
-  }
-  
-  .collection img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .collection p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-    text-transform: capitalize;
-  }
-  
-  .collection:nth-child(3) {
-    grid-column: span 2;
-    margin-bottom: 10px;
-  }
-  
-  .container1 {
-    max-width: 1200px;
-    margin: 0 auto;
+.container1 {
+    margin: 0 auto 20px auto;
     padding: 20px;
+    background-color: var(--container-color);
+    color: var(--first-color);
 }
 
 .container1 h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: "Roboto";
 }
 
 .catalog {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    font-family: "Roboto";
 }
 
 .column {
     width: 23%;
-    background-color: #fff;
-    margin-bottom: 20px;
+    margin: 0 30px 20px 30px;
     padding: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .letter-section {
@@ -1154,12 +1132,12 @@ hr {
 
 .letter-section ul li a {
     text-decoration: none;
-    color: #007BFF;
+    color: var(--first-color);
     transition: color 0.3s;
 }
 
 .letter-section ul li a:hover {
-    color: #0056b3;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
