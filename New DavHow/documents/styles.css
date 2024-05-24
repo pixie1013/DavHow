@@ -232,11 +232,9 @@ img{
     cursor: pointer;
 }
 
-.subtype:hover {
-    color:#003676;
-}
 .subtype-text:hover{
     font-size: larger;
+    color:#003676;
 }
 /* REQUIREMENT INFO BOX */
 .requirement-info .info-box {
