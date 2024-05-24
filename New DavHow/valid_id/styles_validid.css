@@ -344,6 +344,10 @@ img{
     margin-top: -15px;
 }
 
+.location-details p:nth-child(1){
+    cursor: pointer;
+}
+
 .location-details td{
     border-bottom: 1px solid #c0c0c0; 
     padding: 3px 0 3px 0;
