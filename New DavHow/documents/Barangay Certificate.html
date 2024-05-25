@@ -21,25 +21,30 @@
 <body>
     <header class="header1">
         <div class="top-bar">
-          <div class="socmeds">
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
-            <a href="#"><i class="ri-mail-fill"></i></a>
+          <div class="top-left">
+            <div class="time">
+              <div class="display-time"></div>
+              <div class="display-date">
+                <span id="month">month</span>
+                <span id="daynum">00</span>
+                <span id="year">0000</span>
+                <span id="day">day</span>
+              </div>
+            </div>
+            <div class="socmeds">
+              <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+              <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
+              <a href="#"><i class="ri-mail-fill"></i></a>
+            </div>
           </div>
+          
           <div class="logo">
             <img src="/New DavHow/photos/logo.png" alt="DavHow: Unsaon ni Bai?">
             <p class="Brand">DavHow</p>
             <p class="Tagline">UNSAON NI BAI?</p>
           </div>
-          <div class="time">
-            <div class="display-date">
-              <span id="day">day<br></span>
-              <span id="month">month</span>
-              <span id="daynum">00</span>
-              <span id="year">0000</span>
-            </div>
-            <div class="display-time"></div>
-        </div>
+          <!-- Login button -->
+          <i class="ri-user-line nav_login" id="login-btn"></i>
         </div>
       </header>
       <header class="header" id="header">
@@ -53,15 +58,11 @@
                  </li>
     
                  <li class="nav_item">
-                    <a href="#" class="nav_link">CATALOG</a>
+                    <a href="catalog.html" class="nav_link">CATALOG</a>
                  </li>
     
                  <li class="nav_item">
                     <a href="#" class="nav_link">ABOUT US</a>
-                 </li>
-    
-                 <li class="nav_item">
-                    <a href="#" class="nav_link">DASHBOARD</a>
                  </li>
               </ul>
     
@@ -74,9 +75,6 @@
            <div class="nav_actions">
               <!-- Search button -->
               <i class="ri-search-line nav_search" id="search-btn"></i>
-    
-              <!-- Login button -->
-              <i class="ri-user-line nav_login" id="login-btn"></i>
     
               <!-- Toggle button -->
               <div class="nav_toggle" id="nav-toggle">
@@ -128,6 +126,7 @@
     
         <i class="ri-close-circle-line login__close" id="login-close"></i>
       </div>
+
       <div class="whole-document-area">
         <!-- Document-Area -->
         <section class="document-area">
@@ -333,33 +332,13 @@
             </div>          
 
             <!-- Location -->
-            <!-- <div class="location-info" hidden>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.5292139998946!2d125.60507907304853!3d7.064467516644606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96d78c24bbd93%3A0x59ce07b02e60810c!2sCity%20Treasurer&#39;s%20Office!5e0!3m2!1sen!2sph!4v1716316797314!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="details-container">
-                <!-- LIST OF LOCATIONS -->
-                    <!-- <div class="location-details">
-                        <strong><p><a target=”_blank” href="https://maps.app.goo.gl/JrVns7n9T7ms59n48">City Treasurer’s Office</a></p></strong>                                                         
-                        <table>
-                            <tr>
-                                <td>Address</td>
-                                <td>Room 1, City Hall Bldg., San Pedro St., Davao City</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>cto@davaocity.gov.ph</td>
-                            </tr>
-                            <tr>
-                                <td>Phone</td>
-                                <td>(082) 241-1000 local 232 /  225-02-00</td>
-                            </tr>
-                        </table>                    
-                 </div>
-                </div>
-            </div>   -->
+            <div class="location-info" hidden>
+                <p>Refer to the barangay of your residence.</p>
+            </div>
     
             <!--Fees-->
             <div class="fee-info" hidden>
-                <div class="no-fee">
+                <div class="no-fee info-box">
                     <p>Processing of Barangay Certificate is commonly free of charge.</p> 
                 </div>
             </div>
@@ -376,9 +355,6 @@
             <div class="reference-info">
                 <div class="article-reference">
                     <a href="httpswww.scribd.comdocument470690996barangay-certification-docx" target="_blank">Sample Barangay Certificate</a>
-                </div>
-                <div class="article-reference">
-                    <a href="https://chedscholarships.com/certificate-of-indigency/" target="_blank">CHED Certificate of Indigency</a>
                 </div>
             </div>
         </section>

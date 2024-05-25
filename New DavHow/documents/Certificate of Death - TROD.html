@@ -21,25 +21,30 @@
 <body>
     <header class="header1">
         <div class="top-bar">
-          <div class="socmeds">
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
-            <a href="#"><i class="ri-mail-fill"></i></a>
+          <div class="top-left">
+            <div class="time">
+              <div class="display-time"></div>
+              <div class="display-date">
+                <span id="month">month</span>
+                <span id="daynum">00</span>
+                <span id="year">0000</span>
+                <span id="day">day</span>
+              </div>
+            </div>
+            <div class="socmeds">
+              <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+              <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
+              <a href="#"><i class="ri-mail-fill"></i></a>
+            </div>
           </div>
+          
           <div class="logo">
             <img src="/New DavHow/photos/logo.png" alt="DavHow: Unsaon ni Bai?">
             <p class="Brand">DavHow</p>
             <p class="Tagline">UNSAON NI BAI?</p>
           </div>
-          <div class="time">
-            <div class="display-date">
-              <span id="day">day<br></span>
-              <span id="month">month</span>
-              <span id="daynum">00</span>
-              <span id="year">0000</span>
-            </div>
-            <div class="display-time"></div>
-        </div>
+          <!-- Login button -->
+          <i class="ri-user-line nav_login" id="login-btn"></i>
         </div>
       </header>
       <header class="header" id="header">
@@ -53,15 +58,11 @@
                  </li>
     
                  <li class="nav_item">
-                    <a href="#" class="nav_link">CATALOG</a>
+                    <a href="catalog.html" class="nav_link">CATALOG</a>
                  </li>
     
                  <li class="nav_item">
                     <a href="#" class="nav_link">ABOUT US</a>
-                 </li>
-    
-                 <li class="nav_item">
-                    <a href="#" class="nav_link">DASHBOARD</a>
                  </li>
               </ul>
     
@@ -74,9 +75,6 @@
            <div class="nav_actions">
               <!-- Search button -->
               <i class="ri-search-line nav_search" id="search-btn"></i>
-    
-              <!-- Login button -->
-              <i class="ri-user-line nav_login" id="login-btn"></i>
     
               <!-- Toggle button -->
               <div class="nav_toggle" id="nav-toggle">
@@ -128,7 +126,6 @@
     
         <i class="ri-close-circle-line login__close" id="login-close"></i>
       </div>
-
     <div class="whole-document-area">
     <!-- Document-Area -->
     <section class="document-area">
@@ -262,6 +259,7 @@
         </div>
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>If death happened in Hospital</h2>
             </div>
             <div class="info-box">
@@ -272,6 +270,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>If death happened at Home</h2>
             </div>
             <div class="info-box">
@@ -282,6 +281,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>If Dead on the Spot (DOS)</h2>
             </div>
             <div class="info-box">
@@ -292,6 +292,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>If Dead on Arrival (DOA)</h2>
             </div>
             <div class="info-box">
@@ -310,7 +311,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Fill Out Death Certificate:</h3>
+                    <h3 class="requirement">Fill Out Death Certificate</h3>
                     <p>Complete the Death Certificate form.</p>                    
                 </div>
             </div>
@@ -322,7 +323,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Signature of Embalmer:</h3>
+                    <h3 class="requirement">Signature of Embalmer</h3>
                     <p>Go to the concerned Funeral Parlor for the embalmer's signature on the Death Certificate.</p>                    
                 </div>
             </div>
@@ -334,7 +335,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Review and Approval by City Health Officer:</h3>
+                    <h3 class="requirement">Review and Approval by City Health Officer</h3>
                     <p>Proceed to the City Health Office for the review and approval/signature of the City Health Officer.</p>
                     <p>Pay the required fee (Php 50.00) at the Treasurer's office.</p>
                 </div>
@@ -347,7 +348,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Submission to Death Division in City Civil Registrar’s Office:</h3>
+                    <h3 class="requirement">Submission to Death Division in City Civil Registrar’s Office</h3>
                     <p>Go to the Death Division in the City Civil Registrar’s Office.</p>
                     <p>Submit the completed Death Certificate and required documents for registration.</p>
                 </div>
@@ -360,7 +361,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Payment of Burial Permit Fee:</h3>
+                    <h3 class="requirement">Payment of Burial Permit Fee</h3>
                     <p>Proceed to the City Treasurer's Office to pay the burial permit fee.</p>
                     <p>The fee for public and private burial permits is Php 75.00.</p>
                 </div>
@@ -373,7 +374,7 @@
                     </div>
                 </div>         
                 <div class="info-details">
-                    <h3 class="requirement">Submission of Official Receipt:</h3>
+                    <h3 class="requirement">Submission of Official Receipt</h3>
                     <p>Return to the Death Division in the City Civil Registrar’s Office.</p>
                     <p>Submit the official receipt of the burial permit fee payment.</p>
                     <p>Wait for the release of the registered Death Certificate.</p>

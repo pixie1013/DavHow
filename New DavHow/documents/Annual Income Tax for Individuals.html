@@ -21,25 +21,30 @@
 <body>
     <header class="header1">
         <div class="top-bar">
-          <div class="socmeds">
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
-            <a href="#"><i class="ri-mail-fill"></i></a>
+          <div class="top-left">
+            <div class="time">
+              <div class="display-time"></div>
+              <div class="display-date">
+                <span id="month">month</span>
+                <span id="daynum">00</span>
+                <span id="year">0000</span>
+                <span id="day">day</span>
+              </div>
+            </div>
+            <div class="socmeds">
+              <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+              <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
+              <a href="#"><i class="ri-mail-fill"></i></a>
+            </div>
           </div>
+          
           <div class="logo">
             <img src="/New DavHow/photos/logo.png" alt="DavHow: Unsaon ni Bai?">
             <p class="Brand">DavHow</p>
             <p class="Tagline">UNSAON NI BAI?</p>
           </div>
-          <div class="time">
-            <div class="display-date">
-              <span id="day">day<br></span>
-              <span id="month">month</span>
-              <span id="daynum">00</span>
-              <span id="year">0000</span>
-            </div>
-            <div class="display-time"></div>
-        </div>
+          <!-- Login button -->
+          <i class="ri-user-line nav_login" id="login-btn"></i>
         </div>
       </header>
       <header class="header" id="header">
@@ -53,15 +58,11 @@
                  </li>
     
                  <li class="nav_item">
-                    <a href="#" class="nav_link">CATALOG</a>
+                    <a href="catalog.html" class="nav_link">CATALOG</a>
                  </li>
     
                  <li class="nav_item">
                     <a href="#" class="nav_link">ABOUT US</a>
-                 </li>
-    
-                 <li class="nav_item">
-                    <a href="#" class="nav_link">DASHBOARD</a>
                  </li>
               </ul>
     
@@ -74,9 +75,6 @@
            <div class="nav_actions">
               <!-- Search button -->
               <i class="ri-search-line nav_search" id="search-btn"></i>
-    
-              <!-- Login button -->
-              <i class="ri-user-line nav_login" id="login-btn"></i>
     
               <!-- Toggle button -->
               <div class="nav_toggle" id="nav-toggle">
@@ -259,18 +257,18 @@
         <!-- Requirements -->
         <div class="requirement-info">
             <div class="info-box">
+                <h3 class="requirement">Eligibility</h3>
+                <p>This return shall be filed by every resident citizen deriving compensation income from all sources, or resident alien and non-resident citizen with respect to compensation income from within the Philippines, except the following:</p>
+                <ul>
+                    <li>An individual whose taxable income does not exceed P 250,000.00</li>
+                    <li>An individual with respect to pure compensation income, as defined in Section 32(A)(1) derived from sources within the Philippines, the income tax on which has been correctly withheld (tax due equals tax withheld) under the provisions of Section 79 of the Code: Provided, that an individual deriving compensation concurrently from two or more employers at any time during the taxable year shall file an income tax return</li>
+                    <li>An individual whose sole income has been subjected to final withholding tax pursuant to Section 57(A) of the Tax Code</li>
+                    <li>A minimum wage earner as defined in Section 22(HH) of the Tax Code or an individual who is exempt from income tax pursuant to the provisions of the Tax Code and other laws, general or special</li>
+                  </ul>                  
+            </div>
+            <div class="info-box">
                 <h3 class="requirement">Certificate of Income Tax Withheld on Compensation (BIR Form 2316)</h3>
-                <p>Submit if applicable</p>
-            </div>
-            
-            <div class="info-box">
-                <h3 class="requirement">Certificate of Income Payments Not Subjected to Withholding Tax (BIR Form 2304)</h3>
-                <p>Submit if applicable</p>
-            </div>
-            
-            <div class="info-box">
-                <h3 class="requirement">Certificate of Creditable Tax Withheld at Source (BIR Form 2307)</h3>
-                <p>Submit if applicable</p>
+                <p>Submit the original document</p>
             </div>
             
             <div class="info-box">
@@ -279,35 +277,24 @@
             </div>
             
             <div class="info-box">
-                <h3 class="requirement">Proof of Foreign Tax Credits</h3>
+                <h3 class="requirement">Proofs of Foreign Tax Credits</h3>
                 <p>Submit if applicable</p>
             </div>
             
             <div class="info-box">
                 <h3 class="requirement">Income Tax Return previously filed and proof of payment</h3>
-                <p>Submit if filing an amended return for the same year</p>
+                <p>Submit if filing an amended return for the same taxable year</p>
             </div>
             
-            <div class="info-box">
-                <h3 class="requirement">Account Information Form (AIF) or Certificate of the independent Certified Public Accountant (CPA) with Audited Financial Statements</h3>
-                <p>Required if the gross annual sales, earnings, receipts, or output exceed three million pesos (P3,000,000.00)</p>
-            </div>
-            
-            <div class="info-box">
-                <h3 class="requirement">Account Information Form or Financial Statements not necessarily audited by an independent CPA</h3>
-                <p>Required if the gross annual sales, earnings, receipts, or output do not exceed P3,000,000.00 and are subject to graduated income tax rates under Section 24(A)(2)(a)</p>
-            </div>
-            
-            <div class="info-box">
-                <h3 class="requirement">Proof of prior year’s excess tax credits</h3>
-                <p>Submit if applicable</p>
-            </div>            
         </div>        
 
          <!-- Procedure -->
          <div class="procedure-info">
             <div class="subtype">
-                <p class="subtype-text"><strong> For Electronic Filing and Payment System (eFPS) Filer</strong></p><hr>
+                <div class="category">
+                    <img src="/New DavHow/valid_id/black_backto-icon.svg" alt="">
+                    <p class="subtype-text"><strong> For Electronic Filing and Payment System (eFPS) Filer</strong></p>
+                </div><hr>
                 <div class="info-box">
                     <div class="circle-background">
                         <div class="procedure-number">
@@ -315,8 +302,8 @@
                         </div>
                     </div>         
                     <div class="info-details">
-                        <h3 class="requirement">Fill-up BIR Form No. 1702</h3>
-                        <p>Fill in all applicable fields in the BIR Form No. 1702 according to your financial information and tax obligations.</p>
+                        <h3 class="requirement">Fill-up Applicable Fields in BIR Form No. 1700</h3>
+                        <p>Complete the necessary fields in the BIR Form No. 1700, ensuring all required information is accurate and up to date. This form pertains to the Annual Income Tax Return for Individuals earning purely compensation income.</p>
                     </div>
                 </div>
                 
@@ -327,8 +314,10 @@
                         </div>
                     </div>         
                     <div class="info-details">
-                        <h3 class="requirement">Proceed to Payment</h3>
-                        <p>After completing the form, proceed to payment by clicking the “Proceed to Payment” button.</p>
+                        <h3 class="requirement">Pay Electronically</h3>
+                        <p>After completing the form, proceed to the electronic filing and payment system (eFPS).</p>
+                        <p>Click the "Proceed to Payment" button on the eFPS platform.</p>
+                        <p>Fill out the required fields in the "eFPS Payment Form," including your payment details.</p>
                     </div>
                 </div>
                 
@@ -339,8 +328,8 @@
                         </div>
                     </div>         
                     <div class="info-details">
-                        <h3 class="requirement">Fill-up eFPS Payment Form</h3>
-                        <p>You will be directed to the eFPS Payment Form. Fill in the required fields accurately, providing your payment details.</p>
+                        <h3 class="requirement">Submit Payment Form</h3>
+                        <p>Once all required fields in the payment form are filled out, click the "Submit" button to process your payment.</p>
                     </div>
                 </div>
                 
@@ -351,8 +340,66 @@
                         </div>
                     </div>         
                     <div class="info-details">
-                        <h3 class="requirement">Submit Payment</h3>
-                        <p>Once all required fields are filled out, click the “Submit” button to initiate the payment process.</p>
+                        <h3 class="requirement">Receive Payment Confirmation</h3>
+                        <p>After submitting the payment, you will receive a payment confirmation from the Accredited Agent Banks (eFPS-AABs).</p>
+                        <p>This confirmation will indicate that your e-filing and e-payment were successful.</p>
+                    </div>
+                </div>                                
+            </div>
+
+            <div class="subtype">
+                <div class="category">
+                    <img src="/New DavHow/valid_id/black_backto-icon.svg" alt="">
+                    <p class="subtype-text"><strong>For Non-eFPS Filer</strong></p>
+                </div><hr>
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>1</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Fill-up Applicable Fields in the BIR Form No. 1700</h3>
+                        <p>Complete the necessary fields in the BIR Form No. 1700 using the downloaded Electronic Bureau of Internal Revenue Form (eBIRForm) Package.</p>
+                        <p>Ensure all required information is accurate and complete.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>2</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Print the Duly Accomplished BIR Form No. 1700</h3>
+                        <p>Print the duly accomplished BIR Form No. 1700 in triplicate.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>3</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Proceed to the Nearest Authorized Agent Bank (AAB)</h3>
+                        <p>Go to the nearest Authorized Agent Bank (AAB) under the jurisdiction of the Revenue District Office (RDO) where you are registered.</p>
+                        <p>Present the duly accomplished BIR Form No. 1700, together with the required attachments and your payment.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>4</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Alternative for Places without AABs</h3>
+                        <p>In places where there are no AABs, proceed to the Revenue Collection Officer or the duly Authorized City or Municipal Treasurer located within the Revenue District Office where you are registered.</p>
+                        <p>Present the duly accomplished BIR Form No. 1700, together with the required attachments and your payment.</p>
                     </div>
                 </div>
                 
@@ -363,213 +410,133 @@
                         </div>
                     </div>         
                     <div class="info-details">
-                        <h3 class="requirement">Payment Confirmation</h3>
-                        <p>After submission, wait for the payment confirmation from eFPS-AABs (Authorized Agent Banks). This confirmation serves as proof of successful e-filing and e-payment.</p>
+                        <h3 class="requirement">Receive Your Copy</h3>
+                        <p>Receive your copy of the duly stamped and validated form from the teller of the AABs, Revenue Collection Officer, or duly Authorized City or Municipal Treasurer.</p>
                     </div>
-                </div>                
-            </div>
-
-                <div class="subtype">
-                    <p class="subtype-text"><strong>For Non-eFPS Filer</strong></p><hr>
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>1</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Download and Fill-up BIR Form No. 1702</h3>
-                            <p>Download the Electronic Bureau of Internal Revenue Form (eBIRForm) Package. Fill in all applicable fields in the downloaded BIR Form No. 1702 according to your financial information and tax obligations.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>2</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Print the Duly Accomplished Form</h3>
-                            <p>Once you have filled out the form, print the duly accomplished BIR Form No. 1702.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>3</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Proceed to Authorized Agent Bank (AAB)</h3>
-                            <p>Proceed to the nearest Authorized Agent Bank (AAB) under the jurisdiction of the Revenue District Office where you are registered.</p>
-                            <p>Present the printed and duly accomplished BIR Form 1702 to the teller at the AAB.</p>
-                            <p>Submit the required attachments along with your payment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>4</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Alternatively, proceed to Revenue Collection Officer or Municipal Treasurer</h3>
-                            <p>In places where there are no AABs, proceed to the Revenue Collection Officer or duly Authorized City or Municipal Treasurer located within the Revenue District Office where you are registered.</p>
-                            <p>Present the printed and duly accomplished BIR Form 1702 to the Revenue Collection Officer or Municipal Treasurer.</p>
-                            <p>Submit the required attachments along with your payment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>5</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Receive Stamped and Validated Form</h3>
-                            <p>After submission of the form and payment, receive your copy of the duly stamped and validated BIR Form No. 1702 from the teller of the AAB, Revenue Collection Officer, or Municipal Treasurer.</p>
-                        </div>
-                    </div>                    
                 </div>
+                                   
             </div>
-
-            <div class="procedure-info">
-                <div class="subtype">
-                    <p class="subtype-text"><strong>For Manual Filer</strong></p><hr>
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>1</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Fill-up BIR Form No. 1702</h3>
-                            <p>Fill out the BIR Form No. 1702 in triplicate copies. Ensure that all applicable fields are accurately filled in according to your financial information and tax obligations.</p>
+            <div class="subtype">
+                <div class="category">
+                    <img src="/New DavHow/valid_id/black_backto-icon.svg" alt="">
+                    <p class="subtype-text"><strong>For Manual Filer</strong></p>
+                </div><hr>
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>1</p>
                         </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Fill-up the BIR Form No. 1700:</h3>
+                        <p>Complete all sections of the BIR Form No. 1700 in triplicate copies.</p>
                     </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>2</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Proceed to RDO or Tax Filing Center</h3>
-                            <p>Proceed to the Revenue District Office (RDO) where you are registered or to any Tax Filing Center established by the BIR.</p>
-                            <p>Bring the triplicate copies of the duly accomplished BIR Form 1702, along with the required attachments as specified by the BIR.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>3</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Submit Documents</h3>
-                            <p>Present the triplicate copies of the duly accomplished BIR Form 1702 to the representative at the RDO or Tax Filing Center.</p>
-                            <p>Submit the required attachments along with the forms for review and processing.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="circle-background">
-                            <div class="procedure-number">
-                                <p>4</p>
-                            </div>
-                        </div>         
-                        <div class="info-details">
-                            <h3 class="requirement">Receive Stamped and Validated Form</h3>
-                            <p>After submission, the representative at the RDO or Tax Filing Center will stamp and validate the triplicate copies of the BIR Form No. 1702.</p>
-                            <p>Receive your copy of the duly stamped and validated form from the RDO or Tax Filing Center representative as proof of submission.</p>
-                        </div>
-                    </div>                    
                 </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>2</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Visit the Revenue District Office (RDO) or Tax Filing Center:</h3>
+                        <p>Proceed to the Revenue District Office where you are registered or any Tax Filing Center established by the BIR.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>3</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Submission and Documentation:</h3>
+                        <p>Present the filled-up BIR Form 1700 along with the necessary attachments to the authorized personnel.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>4</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Verification Process:</h3>
+                        <p>The personnel will review the completeness and accuracy of the submitted form and its attachments.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>5</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Stamping and Validation:</h3>
+                        <p>Upon successful verification, the representative from the RDO or Tax Filing Center will stamp and validate each copy of the BIR Form 1700.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="circle-background">
+                        <div class="procedure-number">
+                            <p>6</p>
+                        </div>
+                    </div>         
+                    <div class="info-details">
+                        <h3 class="requirement">Receipt of Stamped Form:</h3>
+                        <p>Receive your copy of the duly stamped and validated BIR Form 1700 from the representative.</p>
+                    </div>
+                </div>                               
             </div>
+        </div>
 
+        <!-- Location -->
         <div class="location-info" hidden>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23914.91754813268!2d125.59983506196379!3d7.092275119269062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96c4d43af266b%3A0x9892745afc8ca94e!2sPhilippine%20Statistics%20Authority!5e0!3m2!1sen!2sph!4v1716411718076!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.556846931582!2d125.60522837304856!3d7.061240216684942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96d7fa7426e87%3A0xcfcfd78a456fc418!2sBureau%20of%20Internal%20Revenue%20Region%20XI!5e0!3m2!1sen!2sph!4v1716643533053!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="details-container">
-                <!-- LIST OF LOCATIONS -->
-                <div class="location-details">
-                    <strong><p>Philippine Statistics Authority</p></strong>    
+            <!-- LIST OF LOCATIONS -->
+                 <div class="location-details">
+                    <strong><p><a target=”_blank” href="https://maps.app.goo.gl/rzkSmD93tfY7XmBn8">Bureau of Internal Revenue Region XI</a></p></strong>                                                         
                     <table>
                         <tr>
                             <td>Address</td>
-                            <td>Ango Building, Cabaguio Avenue Davao City, Davao del Sur 8000</td>
+                            <td>Room 302, 3rd Floor, BIR Building, Bolton Street, Davao City, 8000 Davao del Sur</td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>psaregion11@yahoo.com.ph</td>
+                            <td>rr_19csu@bir.gov.ph</td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>(082) 221-3593/ (082) 221-8338/ (082) 224-1140</td>
+                            <td>(082) 224-44-72</td>
                         </tr>
                     </table>                    
-                </div>
+             </div>
             </div>
         </div>
         
 
         <!--Fees-->
         <div class="fee-info" hidden>
-            <div class="no-fee">
-                <p>Pursuant to RA 11261, the issuance of one (1) copy of the birth certificate for a first time job seeker is to be issued for free</p> 
+            <div class=""no-fee>
+                <p>No fees mentioned.</p>
             </div>
-            <div class="fee">
-                <table>
-                        <tr>
-                            <strong><td class="fee-name">Processing Fee (per copy)</td></strong>
-                            <td rowspan="2">Php 150.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fee-location"></td>                    
-                        </tr>
-                </table>
-            </div>
-            <div class="fee">
-                <table>
-                        <tr>
-                            <strong><td class="fee-name">Documentary Stamp Tax</td></strong>
-                            <td rowspan="2">Php 30.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fee-location"></td>                    
-                        </tr>
-                </table>
-            </div>
-            <div class="total-fee fee">
-                <table>
-                        <tr>
-                            <td class="fee-total">Total to pay:</td>
-                            <td rowspan="2"><strong>PHP 180.00</strong></td>
-                        </tr>
-                </table>
-            </div>
-        </div>     
+        </div>   
         
         <!--Sample Photo-->
         <div class="samplephoto-info" >
             <p>DISCLAIMER: This is a sample photo of a document.</p>
-            <div class="img-magnifier-container" onmouseover="magnify(reference-photo, 3)">
-                <img id="reference-photo" src="/New DavHow/documents/document_images/Annual Income Tax for Partnerships and Corporations.jpg" alt="">
+            <div class="img-magnifier-container" onmouseover="magnify('reference-photo', 3)">
+                <img id="reference-photo" src="/New DavHow/documents/document_images/Annual Income Tax for Individuals Earning Solely from Compensation (Including Non-BusinessNon-Profession Related Income).jpg" alt="">
             </div>
-            <div class="img-magnifier-container" onmouseover="magnify(reference-photo, 3)">
-                <img id="reference-photo" src="/New DavHow/documents/document_images/1702-RT Jan 2018 ENCS Final v3_page-0002.jpg" alt="">
-            </div>
-            <div class="img-magnifier-container" onmouseover="magnify(reference-photo, 3)">
-                <img id="reference-photo" src="/New DavHow/documents/document_images/1702-RT Jan 2018 ENCS Final v3_page-0003.jpg" alt="">
-            </div>
-            <div class="img-magnifier-container" onmouseover="magnify(reference-photo, 3)">
-                <img id="reference-photo" src="/New DavHow/documents/document_images/1702-RT Jan 2018 ENCS Final v3_page-0004.jpg" alt="">
-            </div>
+            <div class="img-magnifier-container" onmouseover="magnify('reference-photo-2', 3)">
+                <img id="reference-photo-2" src="/New DavHow/documents/document_images/1700 Jan 2018 ENCS v6_page-0002.jpg" alt="">
+            </div>            
         </div>
 
         <!--References-->
@@ -578,7 +545,7 @@
                 <a href="https://www.bir.gov.ph/index.php/bir-forms/income-tax-return.html" target="_blank">Income Tax Return Description</a>
             </div>
             <div class="article-reference">
-                <a href="https://www.bir.gov.ph/images/bir_files/taxpayers_service_programs_and_monitoring_1/1702-RT%20Jan%202018%20ENCS%20Final%20v3.pdf" target="_blank">Sample Annual Income Tax for Corporations and Partnerships</a>
+                <a href="httpswww.bir.gov.phimagesbir_filest" target="_blank">Sample Annual Income Tax for Individuals Earning Purely Compensation Income</a>
             </div>
         </div>
     </section>

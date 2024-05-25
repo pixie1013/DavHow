@@ -19,8 +19,8 @@ $(document).ready(function() {
             var $div = $(this).closest('.information-option').find('label[for="' + this.id + '"]').closest('div div');
             $div.css({
                 'background': 'linear-gradient(to top, #75AAE8, #0075FF)',
-                'box-shadow': '0 0px 0 0 rgba(0,0,0,0.3), 0  0 0 rgba(0,0,0,0.25)'
-            });   
+                'box-shadow': '0 0px 0 0 rgba(0,0,0,0.3), 0 0 0 rgba(0,0,0,0.25)'
+            });
         });
     }
 
@@ -50,293 +50,174 @@ $(document).ready(function() {
     updateBackground();
 });
 
-    // REFERENCE: W3SCHOOLS
-    function magnify(imgID, zoom) {
-        var img, glass, w, h, bw;
-        img = document.getElementById(imgID);
+// Magnify function
+function magnify(imgID, zoom) {
+    var img = document.getElementById(imgID);
+    var glass = document.createElement("DIV");
+    glass.setAttribute("class", "img-magnifier-glass");
+    img.parentElement.insertBefore(glass, img);
 
-        /*create magnifier glass:*/
-        glass = document.createElement("DIV");
-        glass.setAttribute("class", "img-magnifier-glass");
-        /*insert magnifier glass:*/
-        img.parentElement.insertBefore(glass, img);
+    glass.style.backgroundImage = "url('" + img.src + "')";
+    glass.style.backgroundRepeat = "no-repeat";
+    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    var bw = 3;
+    var w = glass.offsetWidth / 2;
+    var h = glass.offsetHeight / 2;
 
-        /*set background properties for the magnifier glass:*/
-        glass.style.backgroundImage = "url('" + img.src + "')";
-        glass.style.backgroundRepeat = "no-repeat";
-        glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-        bw = 3;
-        w = glass.offsetWidth / 2;
-        h = glass.offsetHeight / 2;
+    glass.addEventListener("mousemove", moveMagnifier);
+    img.addEventListener("mousemove", moveMagnifier);
+    glass.addEventListener("touchmove", moveMagnifier);
+    img.addEventListener("touchmove", moveMagnifier);
 
-        /*execute a function when someone moves the magnifier glass over the image:*/
-        glass.addEventListener("mousemove", moveMagnifier);
-        img.addEventListener("mousemove", moveMagnifier);
-        /*and also for touch screens:*/
-        glass.addEventListener("touchmove", moveMagnifier);
-        img.addEventListener("touchmove", moveMagnifier);
-
-        function moveMagnifier(e) {
-            var pos, x, y;
-            /*prevent any other actions that may occur when moving over the image*/
-            e.preventDefault();
-            /*get the cursor's x and y positions:*/
-            pos = getCursorPos(e);
-            x = pos.x;
-            y = pos.y;
-            /*prevent the magnifier glass from being positioned outside the image:*/
-            if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-            if (x < w / zoom) {x = w / zoom;}
-            if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-            if (y < h / zoom) {y = h / zoom;}
-            /*set the position of the magnifier glass:*/
-            glass.style.left = (x - w) + "px";
-            glass.style.top = (y - h) + "px";
-            /*display what the magnifier glass "sees":*/
-            glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
-        }
-
-        function getCursorPos(e) {
-            var a, x = 0, y = 0;
-            e = e || window.event;
-            /*get the x and y positions of the image:*/
-            a = img.getBoundingClientRect();
-            /*calculate the cursor's x and y coordinates, relative to the image:*/
-            x = e.pageX - a.left;
-            y = e.pageY - a.top;
-            /*consider any page scrolling:*/
-            x = x - window.pageXOffset;
-            y = y - window.pageYOffset;
-            return {x : x, y : y};
-        }
+    function moveMagnifier(e) {
+        var pos = getCursorPos(e);
+        var x = pos.x;
+        var y = pos.y;
+        e.preventDefault();
+        if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+        if (x < w / zoom) { x = w / zoom; }
+        if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+        if (y < h / zoom) { y = h / zoom; }
+        glass.style.left = (x - w) + "px";
+        glass.style.top = (y - h) + "px";
+        glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
     }
 
-    document.getElementById("reference-photo").addEventListener("mouseenter", function() {
-        magnify('reference-photo', 3);
-    });
+    function getCursorPos(e) {
+        var a = img.getBoundingClientRect();
+        var x = e.pageX - a.left - window.pageXOffset;
+        var y = e.pageY - a.top - window.pageYOffset;
+        return { x: x, y: y };
+    }
+}
 
-    document.getElementById("reference-photo").addEventListener("mouseleave", function() {
-        var glass = document.querySelector(".img-magnifier-glass");
-        if (glass) {
-            glass.remove();
-        }
-    });
+document.getElementById("reference-photo").addEventListener("mouseenter", function() {
+    magnify('reference-photo', 3);
+});
+
+document.getElementById("reference-photo").addEventListener("mouseleave", function() {
+    var glass = document.querySelector(".img-magnifier-glass");
+    if (glass) {
+        glass.remove();
+    }
+});
 
 // Show Menu
 const navMenu = document.getElementById('nav-menu'),
-navToggle = document.getElementById('nav-toggle'),
-navClose = document.getElementById('nav-close')
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close');
 
 navToggle.addEventListener('click', () => {
-navMenu.classList.add('show-menu')
-})
+    navMenu.classList.add('show-menu');
+});
 
 navClose.addEventListener('click', () => {
-navMenu.classList.remove('show-menu')
-})
+    navMenu.classList.remove('show-menu');
+});
 
-//Search
+// Search
 const search = document.getElementById('search'),
-searchBtn = document.getElementById('search-btn'),
-searchClose = document.getElementById('search-close')
+      searchBtn = document.getElementById('search-btn'),
+      searchClose = document.getElementById('search-close');
 
 searchBtn.addEventListener('click', () => {
-search.classList.add('show-search')
-})
+    search.classList.add('show-search');
+});
 
 searchClose.addEventListener('click', () => {
-search.classList.remove('show-search')
-})
+    search.classList.remove('show-search');
+});
 
+// Login
 const login = document.getElementById('login'),
-loginBtn = document.getElementById('login-btn'),
-loginClose = document.getElementById('login-close')
+      loginBtn = document.getElementById('login-btn'),
+      loginClose = document.getElementById('login-close');
 
 loginBtn.addEventListener('click', () => {
-login.classList.add('show-login')
-})
+    login.classList.add('show-login');
+});
 
 loginClose.addEventListener('click', () => {
-login.classList.remove('show-login')
-})
+    login.classList.remove('show-login');
+});
 
+// Display Time
 const displayTime = document.querySelector(".display-time");
-// Time
 function showTime() {
-let time = new Date();
-displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
-setTimeout(showTime, 1000);
+    let time = new Date();
+    displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
+    setTimeout(showTime, 1000);
 }
-
 showTime();
 
-// Date
+// Update Date
 function updateDate() {
-let today = new Date();
+    let today = new Date();
+    let dayName = today.getDay(),
+        dayNum = today.getDate(),
+        month = today.getMonth(),
+        year = today.getFullYear();
 
-// return number
-let dayName = today.getDay(),
-dayNum = today.getDate(),
-month = today.getMonth(),
-year = today.getFullYear();
-
-const months = [
-"January",
-"February",
-"March",
-"April",
-"May",
-"June",
-"July",
-"August",
-"September",
-"October",
-"November",
-"December",
-];
-const dayWeek = [
-"Sunday",
-"Monday",
-"Tuesday",
-"Wednesday",
-"Thursday",
-"Friday",
-"Saturday",
-];
-// value -> ID of the html element
-const IDCollection = ["day", "daynum", "month", "year"];
-// return value array with number as a index
-const val = [dayWeek[dayName], dayNum, months[month], year];
-for (let i = 0; i < IDCollection.length; i++) {
-document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+    const months = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+    ];
+    const dayWeek = [
+        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ];
+    const IDCollection = ["day", "daynum", "month", "year"];
+    const val = [dayWeek[dayName], dayNum, months[month], year];
+    for (let i = 0; i < IDCollection.length; i++) {
+        document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+    }
 }
-}
-
 updateDate();
 
-// Magnify 
+// Magnify function repetition
 function magnify(imgID, zoom) {
-    var img, glass, w, h, bw;
-    img = document.getElementById(imgID);
-
-    /*create magnifier glass:*/
-    glass = document.createElement("DIV");
+    var img = document.getElementById(imgID);
+    var glass = document.createElement("DIV");
     glass.setAttribute("class", "img-magnifier-glass");
-    /*insert magnifier glass:*/
     img.parentElement.insertBefore(glass, img);
 
-    /*set background properties for the magnifier glass:*/
     glass.style.backgroundImage = "url('" + img.src + "')";
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-    bw = 3;
-    w = glass.offsetWidth / 2;
-    h = glass.offsetHeight / 2;
+    var bw = 3;
+    var w = glass.offsetWidth / 2;
+    var h = glass.offsetHeight / 2;
 
-    /*execute a function when someone moves the magnifier glass over the image:*/
     glass.addEventListener("mousemove", moveMagnifier);
     img.addEventListener("mousemove", moveMagnifier);
-    /*and also for touch screens:*/
     glass.addEventListener("touchmove", moveMagnifier);
     img.addEventListener("touchmove", moveMagnifier);
 
     function moveMagnifier(e) {
-        var pos, x, y;
-        /*prevent any other actions that may occur when moving over the image*/
+        var pos = getCursorPos(e);
+        var x = pos.x;
+        var y = pos.y;
         e.preventDefault();
-        /*get the cursor's x and y positions:*/
-        pos = getCursorPos(e);
-        x = pos.x;
-        y = pos.y;
-        /*prevent the magnifier glass from being positioned outside the image:*/
-        if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-        if (x < w / zoom) {x = w / zoom;}
-        if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-        if (y < h / zoom) {y = h / zoom;}
-        /*set the position of the magnifier glass:*/
+        if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+        if (x < w / zoom) { x = w / zoom; }
+        if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+        if (y < h / zoom) { y = h / zoom; }
         glass.style.left = (x - w) + "px";
         glass.style.top = (y - h) + "px";
-        /*display what the magnifier glass "sees":*/
         glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
     }
 
     function getCursorPos(e) {
-        var a, x = 0, y = 0;
-        e = e || window.event;
-        /*get the x and y positions of the image:*/
-        a = img.getBoundingClientRect();
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - a.left;
-        y = e.pageY - a.top;
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        return {x : x, y : y};
-    }
-}function magnify(imgID, zoom) {
-    var img, glass, w, h, bw;
-    img = document.getElementById(imgID);
-
-    /*create magnifier glass:*/
-    glass = document.createElement("DIV");
-    glass.setAttribute("class", "img-magnifier-glass");
-    /*insert magnifier glass:*/
-    img.parentElement.insertBefore(glass, img);
-
-    /*set background properties for the magnifier glass:*/
-    glass.style.backgroundImage = "url('" + img.src + "')";
-    glass.style.backgroundRepeat = "no-repeat";
-    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-    bw = 3;
-    w = glass.offsetWidth / 2;
-    h = glass.offsetHeight / 2;
-
-    /*execute a function when someone moves the magnifier glass over the image:*/
-    glass.addEventListener("mousemove", moveMagnifier);
-    img.addEventListener("mousemove", moveMagnifier);
-    /*and also for touch screens:*/
-    glass.addEventListener("touchmove", moveMagnifier);
-    img.addEventListener("touchmove", moveMagnifier);
-
-    function moveMagnifier(e) {
-        var pos, x, y;
-        /*prevent any other actions that may occur when moving over the image*/
-        e.preventDefault();
-        /*get the cursor's x and y positions:*/
-        pos = getCursorPos(e);
-        x = pos.x;
-        y = pos.y;
-        /*prevent the magnifier glass from being positioned outside the image:*/
-        if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-        if (x < w / zoom) {x = w / zoom;}
-        if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-        if (y < h / zoom) {y = h / zoom;}
-        /*set the position of the magnifier glass:*/
-        glass.style.left = (x - w) + "px";
-        glass.style.top = (y - h) + "px";
-        /*display what the magnifier glass "sees":*/
-        glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
-    }
-
-    function getCursorPos(e) {
-        var a, x = 0, y = 0;
-        e = e || window.event;
-        /*get the x and y positions of the image:*/
-        a = img.getBoundingClientRect();
-        /*calculate the cursor's x and y coordinates, relative to the image:*/
-        x = e.pageX - a.left;
-        y = e.pageY - a.top;
-        /*consider any page scrolling:*/
-        x = x - window.pageXOffset;
-        y = y - window.pageYOffset;
-        return {x : x, y : y};
+        var a = img.getBoundingClientRect();
+        var x = e.pageX - a.left - window.pageXOffset;
+        var y = e.pageY - a.top - window.pageYOffset;
+        return { x: x, y: y };
     }
 }
 
-// New script
+
 // Show subtypes
 const eligibilityTypes = document.querySelectorAll('.eligibility-type');
 const subType = document.querySelectorAll('.subtype-text');
+
 eligibilityTypes.forEach(eligibilityType => {
     eligibilityType.addEventListener('click', function() {
         const infoBoxes = this.parentElement.querySelectorAll('.info-box');
@@ -346,12 +227,13 @@ eligibilityTypes.forEach(eligibilityType => {
     });
 });
 
-subType.forEach(subType => {
-    subType.addEventListener('click', function() {
-        let sibling = subType.parentNode.firstElementChild;
+const feeTypeTexts = document.querySelectorAll('.fee-type-text');
 
+feeTypeTexts.forEach(feeTypeText => {
+    feeTypeText.addEventListener('click', function() {
+        let sibling = this.parentElement.nextElementSibling;
         while (sibling) {
-            if (sibling !== subType && sibling.classList.contains('info-box')) {
+            if (sibling.classList.contains('fee')) {
                 sibling.style.display = sibling.style.display === 'block' ? 'none' : 'block';
             }
             sibling = sibling.nextElementSibling;
@@ -359,12 +241,26 @@ subType.forEach(subType => {
     });
 });
 
-// ROTATE ICON
-document.addEventListener('DOMContentLoaded', () => {
-    const categories = document.querySelectorAll('requirement-info');
+const subtypeTexts = document.querySelectorAll('.subtype-text');
 
-    categories.forEach(category => {
-        category.addEventListener('click', function() {
+subtypeTexts.forEach(subtypeText => {
+    subtypeText.addEventListener('click', function() {
+        let sibling = this.parentElement.nextElementSibling;
+        while (sibling) {
+            if (sibling.classList.contains('info-box')) {
+                sibling.style.display = sibling.style.display === 'block' ? 'none' : 'block';
+            }
+            sibling = sibling.nextElementSibling;
+        }
+    });
+});
+
+
+// Rotate Icon
+document.addEventListener('DOMContentLoaded', () => {
+    const eligibilityTypes = document.querySelectorAll('.eligibility-type');
+    eligibilityTypes.forEach(eligibilityType => {
+        eligibilityType.addEventListener('click', function() {
             const icon = this.querySelector('img');
             icon.classList.toggle('rotated');
         });
@@ -372,10 +268,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const eligibilityType = document.querySelector('.eligibility-type');
-
-    eligibilityType.addEventListener('click', function() {
-        const icon = this.querySelector('img');
-        icon.classList.toggle('rotated');
+    const subtypeTexts = document.querySelectorAll('.subtype-text');
+    subtypeTexts.forEach(subtypeText => {
+        subtypeText.addEventListener('click', function() {
+            const icon = this.parentElement.querySelector('img');
+            icon.classList.toggle('rotated');
+        });
     });
 });
