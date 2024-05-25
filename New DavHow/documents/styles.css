@@ -402,12 +402,12 @@ img{
 /* ---------------------------FEES----------------------------------  */
 .fee-info {
     display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 100%; 
-    display: grid;
-    width: 500px;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+    max-width: 500px;
     margin: 0 auto;
+    flex-direction: column; 
 }
 
 .no-fee{
@@ -421,6 +421,7 @@ img{
     letter-spacing: 1px;
     margin-top: 10px;
     background-color: white;
+    width: 100%;
 }
 
 .fee .fee-type{
@@ -428,7 +429,7 @@ img{
 }
 
 .fee table {
-    width: 600px; 
+    width: 100%; 
     border-collapse: collapse;
 }
 
@@ -461,6 +462,25 @@ img{
 }
 .total-fee td{
     color: #ffffff;
+}
+
+.fee-category{
+    width: 500px;
+    max-width: 100%;
+}
+
+.fee-type:hover {
+    background-color: #003676;
+    color: #ECECEC;cursor: pointer;
+    font-size: large;
+}
+.fee-category .fee-type ~ .fee {
+    display: none;
+}
+
+.no-fee ul {
+    text-align: justify;
+    margin-left: 25px;
 }
 
 /* ---------------------------REFERENCES----------------------------------  */

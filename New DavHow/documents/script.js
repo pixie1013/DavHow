@@ -227,6 +227,20 @@ eligibilityTypes.forEach(eligibilityType => {
     });
 });
 
+const feeTypeTexts = document.querySelectorAll('.fee-type-text');
+
+feeTypeTexts.forEach(feeTypeText => {
+    feeTypeText.addEventListener('click', function() {
+        let sibling = this.parentElement.nextElementSibling;
+        while (sibling) {
+            if (sibling.classList.contains('fee')) {
+                sibling.style.display = sibling.style.display === 'block' ? 'none' : 'block';
+            }
+            sibling = sibling.nextElementSibling;
+        }
+    });
+});
+
 const subtypeTexts = document.querySelectorAll('.subtype-text');
 
 subtypeTexts.forEach(subtypeText => {
@@ -240,6 +254,7 @@ subtypeTexts.forEach(subtypeText => {
         }
     });
 });
+
 
 // Rotate Icon
 document.addEventListener('DOMContentLoaded', () => {
