@@ -195,7 +195,7 @@ a {
 }
 
 .nav_login {
-    font-size: 1.25rem;
+    font-size: 4.25rem;
     color: var(--first-color);
     cursor: pointer;
     transition: color .4s;
@@ -407,6 +407,14 @@ a {
     background-image: url("photos/image\ 3.svg");
 }
 
+.aboutus__container {
+    display: ruby-text;
+    padding-top: 12rem;
+    justify-content: center;
+    row-gap: 2rem;
+    padding-right: 3rem;
+}
+
 .home__data {
     position: relative;
     text-align: center;
@@ -420,8 +428,25 @@ a {
     color: var(--first-color);
 }
 
+.aboutus__title{
+    font-family: "Roboto";
+    font-weight: 550;
+    font-size: 4rem;
+    line-height: 100%;
+    color: var(--first-color);
+}
+
 .home__description {
-    margin-bottom: 2rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.aboutus__description {
+    margin: 1rem 0 1rem 0;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--first-color);
 }
 
 .home__button {
@@ -1107,7 +1132,6 @@ hr {
     width: 23%;
     margin: 0 30px 20px 30px;
     padding: 15px;
-    text-align: center;
 }
 
 .letter-section {
@@ -1149,5 +1173,457 @@ hr {
 @media (max-width: 480px) {
     .column {
         width: 100%;
+    }
+}
+
+.containerAboutUs {
+    text-align: center;
+}
+
+.headerAboutUs {
+    padding-top: 30px;
+    color: #444;
+    font-size: 20px;
+    margin: auto;
+    line-height: 50px;
+}
+
+.sub-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.teams {
+    margin: 10px;
+    padding: 22px;
+    max-width: 30%;
+    cursor: pointer;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+.teams:hover {
+    background: #ddd;
+    border-radius: 12px;
+}
+
+.teams img {
+    width: 200px;
+    height: 200px;
+}
+
+.name {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.desig {
+    font-style: italic;
+    color: #888;
+}
+
+.about {
+    margin: 20px 0;
+    font-weight: lighter;
+    color: #4e4e4e;
+}
+
+.social-links {
+    margin: 14px;
+}
+
+.social-links a {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    transition: .4s;
+}
+
+.social-links a:hover {
+    transform: scale(1.5);
+}
+
+.social-links a i {
+    color: #444;
+}
+
+@media screen and (max-width: 600px) {
+    .teams {
+        max-width: 100%;
+    }
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.story, .photo1 {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+}
+
+.story img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5; /* Adjust opacity as needed for better text visibility */
+}
+
+.text-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent background to the text for better readability */
+    padding: 20px;
+}
+
+.photo1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container2 {
+        flex-direction: column;
+    }
+    .story, .photo1 {
+        margin: 0;
+        flex: none;
+    }
+    .text-content {
+        padding: 10px;
+    }
+}
+
+.hero {
+    width: 100%;;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hero1 {
+    width: 100%;;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.content1 {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.content2 {
+    flex: 1;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.content1 h1 {
+    font-size: 50px;
+    color: #222;
+    text-align: right;
+}
+
+.content2 h1 {
+    font-size: 50px;
+    color: #222;
+}
+
+.content1 p {
+    margin: 10px 0 0 0;
+    color: #333;
+    animation-delay: 0.5s;
+    font-size: 15px;
+    text-align: right;
+}
+
+.content2 p {
+    margin: 10px 0 0 0;
+    color: #333;
+    animation-delay: 0.5s;
+    font-size: 15px;
+}
+
+.feature-img {
+    flex: 1;
+    max-width: 530px;
+    width: 100%;
+    height: auto;
+    animation-delay: 1.5s;
+    justify-content: center;
+}
+
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content1 {
+        margin-top: 5%;
+    }
+
+    .feature-img {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+.contactUs {
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+}
+
+.contactUsTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.contactUsTitle h2 {
+    font-weight: 500;
+    color: var(--first-color);
+}
+
+.contact {
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.form {
+    grid-area: form;
+}
+
+.info {
+    grid-area: info;
+}
+
+.map {
+    grid-area: map;
+}
+
+.contact h3 {
+    color: var(--first-color);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.formBox {
+    position: relative;
+    width: 100%;
+}
+
+.formBox .row50 {
+    display: flex;
+    gap: 20px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.formBox .row100 .inputBox {
+    width: 100%;
+}
+
+.inputBox span {
+    color: var(--first-color);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input {
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.inputBox textarea {
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.inputBox input[type="submit"] {
+    background-color: var(--first-color);
+    color: #fff;
+    border: none;
+    font-size: 1.1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+}
+
+.inputBox ::placeholder {
+    color: #999;
+}
+
+.info {
+    background-color: var(--first-color);
+}
+
+.info h3 {
+    color: #fff;
+}
+
+.info .infoBox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infoBox div span {
+    min-width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #57c8f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info .infoBox div p {
+    color: #fff;
+    font-size: .8em;
+}
+
+.info .infoBox div a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.sci {
+    margin-top: 40px;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sci li a {
+    color: #fff;
+    font-size: 2em;
+    color: #ccc;
+}
+
+.sci li a:hover {
+    color: #fff;
+}
+
+.map {
+    padding: 0;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    .contactUs {
+        padding: 20px
+    }
+
+    .box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "form"
+        "info"
+        "map";
+    }
+
+    .map {
+        min-height: 300px;
+        padding: 0;
+    }
+
+    .formBox .row50 {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputBox {
+        width: 100%;
+    }
+
+    .contact {
+        padding: 30px;
     }
 }
