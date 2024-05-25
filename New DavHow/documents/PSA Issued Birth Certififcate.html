@@ -21,25 +21,30 @@
 <body>
     <header class="header1">
         <div class="top-bar">
-          <div class="socmeds">
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
-            <a href="#"><i class="ri-mail-fill"></i></a>
+          <div class="top-left">
+            <div class="time">
+              <div class="display-time"></div>
+              <div class="display-date">
+                <span id="month">month</span>
+                <span id="daynum">00</span>
+                <span id="year">0000</span>
+                <span id="day">day</span>
+              </div>
+            </div>
+            <div class="socmeds">
+              <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+              <a href="https://x.com/ART_Solutions23" target="_blank"><i class="ri-twitter-x-line"></i></a>
+              <a href="#"><i class="ri-mail-fill"></i></a>
+            </div>
           </div>
+          
           <div class="logo">
             <img src="/New DavHow/photos/logo.png" alt="DavHow: Unsaon ni Bai?">
             <p class="Brand">DavHow</p>
             <p class="Tagline">UNSAON NI BAI?</p>
           </div>
-          <div class="time">
-            <div class="display-date">
-              <span id="day">day<br></span>
-              <span id="month">month</span>
-              <span id="daynum">00</span>
-              <span id="year">0000</span>
-            </div>
-            <div class="display-time"></div>
-        </div>
+          <!-- Login button -->
+          <i class="ri-user-line nav_login" id="login-btn"></i>
         </div>
       </header>
       <header class="header" id="header">
@@ -53,15 +58,11 @@
                  </li>
     
                  <li class="nav_item">
-                    <a href="#" class="nav_link">CATALOG</a>
+                    <a href="catalog.html" class="nav_link">CATALOG</a>
                  </li>
     
                  <li class="nav_item">
                     <a href="#" class="nav_link">ABOUT US</a>
-                 </li>
-    
-                 <li class="nav_item">
-                    <a href="#" class="nav_link">DASHBOARD</a>
                  </li>
               </ul>
     
@@ -74,9 +75,6 @@
            <div class="nav_actions">
               <!-- Search button -->
               <i class="ri-search-line nav_search" id="search-btn"></i>
-    
-              <!-- Login button -->
-              <i class="ri-user-line nav_login" id="login-btn"></i>
     
               <!-- Toggle button -->
               <div class="nav_toggle" id="nav-toggle">
@@ -128,6 +126,7 @@
     
         <i class="ri-close-circle-line login__close" id="login-close"></i>
       </div>
+
 
     <div class="whole-document-area">
     <!-- Document-Area -->
@@ -258,6 +257,7 @@
         <!-- Requirements -->
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Principal (Document Owner)</h2>
             </div>
             <div class="info-box">
@@ -272,6 +272,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Authorized Representative</h2>
             </div>
             <div class="info-box">
@@ -294,6 +295,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Immediate Family Member of the Document Owner</h2>
             </div>
             <div class="info-box">
@@ -307,6 +309,7 @@
         </div>
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Guardian of Document Owner who is a Minor or Below 18 Years of Age</h2>
             </div>
             <div class="info-box">
@@ -334,6 +337,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Nearest of Kin of a Deceased Person (Brother/Sister/Grandparent)</h2>
             </div>
             <div class="info-box">
@@ -352,6 +356,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Senior Citizen requesting for his/her own document, spouse, parents and son/daughter</h2>
             </div>
             <div class="info-box">
@@ -366,6 +371,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Physically Challenged Client/PWD requesting for his/her own document, spouse, parents and son/daughter</h2>
             </div>
             <div class="info-box">
@@ -380,6 +386,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>Pregnant Woman requesting for her own document, spouse, parents and son/daughter</h2>
             </div>
             <div class="info-box">
@@ -394,6 +401,7 @@
         
         <div class="requirement-info">
             <div class="eligibility-type info-box">
+                <img src="/New DavHow/valid_id/backto-icon.svg" alt="">
                 <h2>First Time Job Seeker (RA 11261)</h2>
             </div>
             <div class="info-box">
@@ -417,7 +425,10 @@
          <!-- Procedure -->
          <div class="procedure-info">
             <div class="subtype">
-                <p class="subtype-text"><strong>Online Application</strong></p><hr>
+                <div class="category">
+                    <img src="/New DavHow/valid_id/black_backto-icon.svg" alt="">
+                    <p class="subtype-text"><strong>Online Application</strong></p>
+                </div><hr>
                 <div class="info-box">
                     <div class="circle-background">
                         <div class="procedure-number">
@@ -518,8 +529,10 @@
 
             <div class="procedure-info">
                 <div class="subtype">
-                    <p class="subtype-text"><strong>Walk in Application</strong></p><hr>
-            
+                    <div class="category">
+                        <img src="/New DavHow/valid_id/black_backto-icon.svg" alt="">
+                        <p class="subtype-text"><strong>Walk in Application</strong></p>
+                    </div><hr>
                     <div class="info-box">
                         <div class="circle-background">
                             <div class="procedure-number">
