@@ -76,6 +76,14 @@ input, button {
 .nav_list {
     list-style: none;
 }
+
+.nav_search,
+.nav_toggle,.nav_close {
+    font-size: 1.25rem;
+    color: var(--third-color);
+    cursor: pointer;
+    transition: color .4s;
+}
   
 a {
     text-decoration: none;
@@ -101,6 +109,7 @@ a {
 
 .nav_tag {
     color: var(--third-color);
+    margin-right: -170px;
 }
 
 .Brand {
@@ -170,7 +179,6 @@ a {
     margin-inline: 1.5rem;
 }
 
-
 .nav {
     height: 36px;
     display: flex;
@@ -196,6 +204,14 @@ a {
     color: var(--third-color);
     cursor: pointer;
     transition: color .4s;
+}
+
+.nav_login {
+    font-size: 1.25rem;
+    color: var(--first-color);
+    cursor: pointer;
+    transition: color .4s;
+    padding-left: 130px;
 }
 
 :is(.nav_search, .nav_link, .nav_login, .nav_toggle):hover {
@@ -350,6 +366,11 @@ a {
     transition: color .4s;
 }
 
+.top-left {
+    display: flex;
+    flex-direction: column;
+}
+
 .show-login {
     opacity: 1;
     pointer-events: initial;
@@ -361,7 +382,10 @@ a {
 
 .time {
     font-size: .8rem;
-    text-align: right;
+}
+
+.display-date{
+    width: 150px;
 }
 
 .display-time {
@@ -371,6 +395,7 @@ a {
 
 .socmeds a{
     color: var(--first-color);
+    font-size: 1.25rem;
 }
 
 .socmeds a:hover {
@@ -573,6 +598,9 @@ hr {
         font-size: 3.5rem;
     }
 
+    .socmeds i {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 895px) {
