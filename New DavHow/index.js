@@ -115,3 +115,15 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+// COMMENT SECTION
+function toggleComments() {
+  var commentsContent = document.getElementsByClassName("comments-content");
+  for (var i = 0; i < commentsContent.length; i++) {
+      if (commentsContent[i].style.display === "none" || commentsContent[i].style.display === "") {
+          commentsContent[i].style.display = "block";
+      } else {
+          commentsContent[i].style.display = "none";
+      }
+  }
+}

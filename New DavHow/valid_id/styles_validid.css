@@ -221,7 +221,6 @@ a{
     text-align: left;
 }
 
-/* New styles  */
 .category ~ .info-box{
     display: none;
 }
@@ -231,7 +230,7 @@ a{
 }
 
 
-/* ---------------------------BUTTON AREA BACKGROUND----------------------------------  */
+/* ---------------------------BUTTON AREA RESPONSIVE----------------------------------  */
 .button-area {
     display: flex;
     justify-content: center;
@@ -241,6 +240,33 @@ a{
     width: 653px;
     margin: 0px auto;
     padding-top: 10px;
+}
+
+@media (max-width: 760px) {
+    .information-option div div {
+        width: 24px;
+        height: 24px;
+    }
+
+    .button-area {
+        width: 618px;
+    }
+
+    .information-option div span {
+        width: 90px;
+    }
+
+    .slider {
+        width: 90px  !important;
+        margin-left: 8px;
+    }
+
+    #tap1:checked ~ .slider {transform: translateX(-10px)  !important;}
+    #tap2:checked ~ .slider {transform: translateX(85px)  !important;}
+    #tap3:checked ~ .slider {transform: translateX(179px) !important;}
+    #tap4:checked ~ .slider {transform: translateX(272px) !important;}
+    #tap5:checked ~ .slider {transform: translateX(365px) !important;}
+    #tap6:checked ~ .slider {transform: translateX(459px) !important;}
 }
 
 /* ---------------------------SLIDER----------------------------------  */
