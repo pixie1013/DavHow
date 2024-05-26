@@ -115,3 +115,16 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let title1 = document.getElementById("title1");
+
+signinBtn.onclick = function(){
+  nameField.style.maxHeight = "0";
+  title1.innerHTML = "Sign In";
+  signupBtn.classList.add("disable");
+  signinBtn.classList.remove("disable");
+}
