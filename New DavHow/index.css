@@ -1488,6 +1488,18 @@ hr {
     width: 100%;
 }
 
+
+.send-button button:hover {
+    background: none !important;
+    color: var(--first-color) !important;
+    border: 1px solid var(--first-color) !important;
+}
+
+.row100 .send-button span {
+    margin-top: -3%;
+    font-size: smaller;
+}
+
 .inputBox span {
     color: var(--first-color);
     margin-top: 10px;
@@ -1512,7 +1524,7 @@ hr {
     margin-bottom: 10px;
 }
 
-.inputBox input[type="submit"] {
+.inputBox button {
     background-color: var(--first-color);
     color: #fff;
     border: none;
@@ -1521,6 +1533,10 @@ hr {
     font-weight: 500;
     cursor: pointer;
     padding: 14px 15px;
+}
+
+.inputBox.title textarea{
+    height: 10px !important;
 }
 
 .inputBox ::placeholder {
