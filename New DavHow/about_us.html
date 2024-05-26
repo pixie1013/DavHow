@@ -41,7 +41,7 @@
         <p class="Tagline">UNSAON NI BAI?</p>
       </div>
       <!-- Login button -->
-      <i class="ri-user-line nav_login" id="login-btn"></i>
+      <ion-icon name="person-circle-outline" class="nav_login" id="login-btn"></ion-icon>
     </div>
   </header>
   <header class="header" id="header">
@@ -50,18 +50,22 @@
 
        <div class="nav_menu" id="nav-menu">
           <ul class="nav_list">
-             <li class="nav_item">
-                <a href="homepage.html" class="nav_link">HOME</a>
-             </li>
+            <li class="nav_item">
+              <a href="homepage.html" class="nav_link">HOME</a>
+            </li>
 
-             <li class="nav_item">
-                <a href="catalog.html" class="nav_link">CATALOG</a>
-             </li>
+            <li class="nav_item">
+              <a href="catalog.html" class="nav_link">CATALOG</a>
+            </li>
 
-             <li class="nav_item">
-                <a href="about_us.html" class="nav_link">ABOUT US</a>
-             </li>
-          </ul>
+            <li class="nav_item">
+              <a href="about_us.html" class="nav_link">ABOUT US</a>
+            </li>
+
+            <li class="nav_item">
+              <a href="#" class="nav_link">FORUM</a>
+            </li>
+        </ul>
 
           <!-- Close button -->
           <div class="nav_close" id="nav-close">
@@ -219,40 +223,50 @@
       <div class="box">
         <div class="contact form">
           <h3>Send a message</h3>
-          <form>
+          <form method="POST">
             <div class="formBox">
               <div class="row50">
                 <div class="inputBox">
                   <span>First Name</span>
-                  <input type="text" placeholder="John">
+                  <input type="text" placeholder="John" name="first-name">
                 </div>
                 <div class="inputBox">
                   <span>Last Name</span>
-                  <input type="text" placeholder="John">
+                  <input type="text" placeholder="John" name="last-name">
                 </div>
               </div>
 
               <div class="row50">
                 <div class="inputBox">
                   <span>Email Address</span>
-                  <input type="text" placeholder="johndoe@email.com">
+                  <input type="text" placeholder="johndoe@email.com" name="email">
                 </div>
                 <div class="inputBox">
                   <span>Mobile</span>
-                  <input type="text" placeholder="09123456789">
+                  <input type="text" placeholder="09123456789" name="mobile-number">
                 </div>
               </div>
-
+              <div class="row100">
+                <div class="inputBox title">
+                  <span>Title</span>
+                  <input type="text" placeholder="Input title here" name="title">
+                </div>
+              </div>
               <div class="row100">
                 <div class="inputBox">
                   <span>Message</span>
+<<<<<<< HEAD
                   <textarea placeholder="Write your message here..."></textarea>
+=======
+                  <textarea placeholder="Write your message here..." name="message"></textarea>
+>>>>>>> 0426e43b31985ccfa788cdd45ce784153000c8de
                 </div>
               </div>
 
               <div class="row100">
-                <div class="inputBox">
-                  <input type="submit" value="Send">
+                <div class="inputBox send-button">
+                  <span></span>
+                  <button type="submit"> Send </button>
                 </div>
               </div>
             </div>
@@ -329,5 +343,6 @@
   </footer>
 
   <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
